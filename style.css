@@ -55,8 +55,15 @@
 	overflow: hidden;	
 }
 .nav-left .btn-default:hover {
-	background-color: #e17d7d !important;
+	background-color: #840303 !important;
 }
+.nav-left .navbar-btn {
+
+    font-size: 15px!important;
+    color: white !important ;
+	background-color: #dd6464 !important;
+}
+
 .styleHr{
 	border-top: 1px solid #8c8b8b;
 	width: 350px;
@@ -82,7 +89,8 @@
 .nav-left
 {
 	float: left;
-	padding: 130px 0 0 80px;
+	padding: 110px 0 0 80px;
+	
 }
 table{
 	margin: 50px;	

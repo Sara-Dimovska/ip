@@ -1,88 +1,9 @@
 <?php 
 include"connection.php";
+include"header.php";
 ?>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
-
-	</head>
-	<body style="background-color:#E0E0E0;">
-
-
-
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header" style="
-												  height: 200px;
-												  ">
-					<a class="navbar-brand" href="#"><img src="assets/26637800_1929517467266064_712596651_n.png"></a>
-				</div>
-
-				<div class="nav-left">
-					<button type="button" class="btn btn-default  navbar-btn" style="
-																					 display: inline-block;
-																					 ">Сите огласи</button>
-
-																					 
-					<button type="button" class="btn btn-default  navbar-btn" style="
-																					 display: inline-block;
-																					 ">Внеси оглас</button>
-					<button type="button" class="btn btn-default  navbar-btn" style="
-																					 display: inline-block;
-																					 ">Помош</button>
-					<button type="button" class="btn btn-default  navbar-btn" style="
-																					 display: inline-block;
-																					 ">Регистрирај се</button>
-
-					<!--
-<ul style="display: block; margin-bottom:20px;" class="center">
-<a href="default.asp" class="glavno_meni"> Сите огласи </a>
-<li style="display: inline-block;">
-<a href="news.asp" class="glavno_meni">Внеси оглас</a>
-</li>
-<li style="
-display: inline-block;
-"><a href="contact.asp" class="glavno_meni">Помош</a></li>
-<li style="
-display: inline-block;
-"><a href="about.asp" class="glavno_meni">Регистрирај се</a></li>
-</ul> -->
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-					<form class="navbar-form navbar-right" style="margin-top: 130px;">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-
-						<button type="submit" class="btn btn-default btn-primary">Пребарај</button>
-						<button type="button" class="btn btn-default  navbar-btn">Најави се</button>
-					</form>
-
-
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-
-
-
 
 		<div class="container">
-
-
-
-
-
-
 
 			<div class = "left">
 				<?php
@@ -104,39 +25,67 @@ display: inline-block;
 					}
 
 					$stranaOD = ($strana-1)*$zapisi_naStrana;
-					/*
-				if(isset($_POST['baraj'])){
-					$kategorija = $_POST['kategorija'];
-					$tip_objekt = $_POST['tip_objekt'];
-					$enterier = $_POST['enterier'];
-					$grad = $_POST['grad'];
-					$cenaOd = $_POST['cenaOd'];
-					$cenaDo = $_POST['cenaDo'];
-					$brSobi = $_POST['brSobi'];
 
-					echo $kategorija . $tip_objekt.$enterier.$grad.$cenaDo.$cenaOd.$brSobi;
-					echo 'sara';
-				}*/
 
-					$sql = mysqli_query($conn,"SELECT oglasi.ID AS id ,oglasi.naslov,oglasi.cena, sliki.link
-				FROM oglasi 
-				INNER JOIN sliki ON (oglasi.ID = sliki.oglasID) LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
+					if(isset($_POST['filter'])){
+						$kategorija = $_POST['kategorija'];
+						$tip_objekt = $_POST['tip_objekti'];
+						$enterier = $_POST['enterier'];
+						$grad = $_POST['grad'];
+						$cenaOd = $_POST['cenaOd'];
+						$cenaDo = $_POST['cenaDo'];
+						$brSobi = $_POST['brSobi'];
 
-					while ($row = mysqli_fetch_array($sql)){
-						echo "<div class ='oglas'> 
+
+						$sql = mysqli_query($conn,"SELECT *
+FROM oglasi INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID),kategorija,tip_objekt,enterier	
+
+WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id AND
+
+kategorija.ime_kategorija = '$kategorija' AND tip_objekt.ime_objekt='$tip_objekt' AND enterier.ime_enterier = '$enterier' AND oglasi.grad = '$grad' AND oglasi.cena BETWEEN '$cenaOd' AND '$cenaDo' AND oglasi.broj_sobi >= '$brSobi'
+				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
+
+						while ($row = mysqli_fetch_array($sql)){
+							echo "<div class ='oglas'> 
 					<a href='oglas.php?id=".$row['id']. "'>";
 
-						echo "<div class ='oglasSlika_mala'>";
-						echo "<img src='sara/".$row['link']."' />";
-						echo "</div>";
-						echo "</a>";
-						echo $row['naslov'];
-						echo' <button type="button" class="btn btn-default" disabled style="background-color:yellow; ">';					
-						echo $row['cena'];
-						echo '</button>';
+							echo "<div class ='oglasSlika_mala'>";
+							echo "<img src='sara/".$row['imeSlika']."' />";
+							echo "</div>";
+							echo "</a>";
+							echo $row['naslov'];
+												
+							echo "Цена:" .$row['cena']."€";
+							//if($row['tip_cena'] == 'Евра')
+								//echo "€";
+							
 
-						echo "</div>";
-					} 
+							echo "</div>";
+						} 
+
+					}
+					else {
+						$sql = mysqli_query($conn,"SELECT *
+				FROM oglasi 
+				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID) LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
+
+						while ($row = mysqli_fetch_array($sql)){
+							echo "<div class ='oglas'> 
+					<a href='oglas.php?id=".$row['id']. "'>";
+
+							echo "<div class ='oglasSlika_mala'>";
+							echo "<img src='sara/".$row['imeSlika']."' />";
+							echo "</div>";
+							echo "</a>";
+							echo $row['naslov'];
+							echo' <button type="button" class="btn btn-default" disabled style="background-color:yellow; ">';					
+							echo $row['cena'];
+							echo '</button>';
+
+							echo "</div>";
+						} 
+
+					}
 
 				}					
 				?>
@@ -170,6 +119,7 @@ display: inline-block;
 			</div>
 			<div class="right ">
 				<p class="text-primary text-center" style="font-size:20px;">Пребарување</p>
+
 				<form action="index.php" method="post">
 					<p class="text-muted" style="font-size:15px;margin:5px;"> Категорија:</p>
 
@@ -181,7 +131,7 @@ display: inline-block;
 
 
 						?>
-						<option value="<?= $row['ime'] ?>"><?= $row['ime'] ?></option>
+						<option value="<?= $row['ime_kategorija'] ?>"><?= $row['ime_kategorija'] ?></option>
 						<?php 
 						} //end while				
 						?>
@@ -209,7 +159,7 @@ display: inline-block;
 
 
 						?>
-						<option value="<?= $row['ime'] ?>"><?= $row['ime'] ?></option>
+						<option value="<?= $row['ime_enterier'] ?>"><?= $row['ime_enterier'] ?></option>
 						<?php 
 						} //end while				
 						?>
@@ -223,7 +173,7 @@ display: inline-block;
 
 
 						?>
-						<option value="<?= $row['lokacija'] ?>"><?= $row['grad'] ?></option>
+						<option value="<?= $row['grad'] ?>"><?= $row['grad'] ?></option>
 						<?php 
 						} //end while				
 						?>
