@@ -13,21 +13,53 @@ include"connection.php";
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 
 	</head>
-	<body style="background-color:#DCDCDC;">
+	<body style="background-color:#E0E0E0;">
 
 
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Brand</a>
+				<div class="navbar-header" style="
+												  height: 200px;
+												  ">
+					<a class="navbar-brand" href="#"><img src="assets/26637800_1929517467266064_712596651_n.png"></a>
 				</div>
 
+				<div class="nav-left">
+					<button type="button" class="btn btn-default  navbar-btn" style="
+																					 display: inline-block;
+																					 ">Сите огласи</button>
+
+																					 
+					<button type="button" class="btn btn-default  navbar-btn" style="
+																					 display: inline-block;
+																					 ">Внеси оглас</button>
+					<button type="button" class="btn btn-default  navbar-btn" style="
+																					 display: inline-block;
+																					 ">Помош</button>
+					<button type="button" class="btn btn-default  navbar-btn" style="
+																					 display: inline-block;
+																					 ">Регистрирај се</button>
+
+					<!--
+<ul style="display: block; margin-bottom:20px;" class="center">
+<a href="default.asp" class="glavno_meni"> Сите огласи </a>
+<li style="display: inline-block;">
+<a href="news.asp" class="glavno_meni">Внеси оглас</a>
+</li>
+<li style="
+display: inline-block;
+"><a href="contact.asp" class="glavno_meni">Помош</a></li>
+<li style="
+display: inline-block;
+"><a href="about.asp" class="glavno_meni">Регистрирај се</a></li>
+</ul> -->
+				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-					<form class="navbar-form navbar-right">
+					<form class="navbar-form navbar-right" style="margin-top: 130px;">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search">
 						</div>
@@ -42,15 +74,13 @@ include"connection.php";
 		</nav>
 
 
-		<div class="banner">
+
+
+		<div class="container">
 
 
 
-		</div>
 
-
-
-		<div class ="container">
 
 
 
@@ -58,7 +88,7 @@ include"connection.php";
 				<?php
 				{
 
-					$zapisi_naStrana = 3;
+					$zapisi_naStrana =10;
 					$sql = "SELECT * FROM oglasi";
 					$result = mysqli_query($conn,$sql);
 					$vkupnoZapisi = mysqli_num_rows($result);
@@ -100,8 +130,7 @@ include"connection.php";
 						echo "<img src='sara/".$row['link']."' />";
 						echo "</div>";
 						echo "</a>";
-						$stringCut = substr($row['naslov'], 0, 40);
-						echo $stringCut;
+						echo $row['naslov'];
 						echo' <button type="button" class="btn btn-default" disabled style="background-color:yellow; ">';					
 						echo $row['cena'];
 						echo '</button>';
@@ -161,7 +190,7 @@ include"connection.php";
 					<select name="tip_objekti" name="kategorija" class="selectpicker show-tick">			
 
 						<?php
-						$result=mysqli_query($conn,"SELECT * FROM tip_objekti");
+						$result=mysqli_query($conn,"SELECT * FROM tip_objekt");
 						while($row = mysqli_fetch_array($result)){
 
 
@@ -189,12 +218,12 @@ include"connection.php";
 					<select name="grad" name="kategorija" class="selectpicker show-tick">			
 
 						<?php
-						$result=mysqli_query($conn,"SELECT lokacija FROM oglasi");
+						$result=mysqli_query($conn,"SELECT  DISTINCT grad FROM oglasi");
 						while($row = mysqli_fetch_array($result)){
 
 
 						?>
-						<option value="<?= $row['lokacija'] ?>"><?= $row['lokacija'] ?></option>
+						<option value="<?= $row['lokacija'] ?>"><?= $row['grad'] ?></option>
 						<?php 
 						} //end while				
 						?>
