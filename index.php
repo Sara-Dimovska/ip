@@ -1,6 +1,7 @@
 <?php 
 include"connection.php";
 include"header.php";
+$oglasi = "";
 ?>
 
 <div class="container">
@@ -9,7 +10,7 @@ include"header.php";
 		<?php
 		{
 
-			$zapisi_naStrana =10;
+			$zapisi_naStrana =12;
 			$sql = "SELECT * FROM oglasi";
 			$result = mysqli_query($conn,$sql);
 			$vkupnoZapisi = mysqli_num_rows($result);
@@ -28,9 +29,9 @@ include"header.php";
 
 
 			if(isset($_POST['filter'])){
-				
+
 				$kategorija = $tip_objekt = $enterier = $grad = "";
-				
+
 				if(isset($_POST['kategorija']))
 					$kategorija = $_POST['kategorija'];
 				if(isset($_POST['tip_objekti']))
@@ -39,21 +40,21 @@ include"header.php";
 					$enterier = $_POST['enterier'];
 				if(isset($_POST['grad']))
 					$grad = $_POST['grad'];
-				
-				
+
+
 				$cenaOd = $_POST['cenaOd'];
 				$cenaDo = $_POST['cenaDo'];
 				$povrshinaOd = $_POST['povrshinaOd'];
 				$povrshinaDo = $_POST['povrshinaDo'];
 				$brSobi = $_POST['brSobi'];
 
-				
+
 				$sql = "SELECT *
-				
+
 						FROM oglasi INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID),kategorija,tip_objekt,enterier	
-						
+
 						WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id";
-				
+
 				$conditions = array();
 				if(!empty($kategorija))
 					$conditions[] = "kategorija.ime_kategorija = '$kategorija'";
@@ -63,27 +64,32 @@ include"header.php";
 					$conditions[] = "enterier.ime_enterier = '$enterier'";
 				if(!empty($grad))
 					$conditions[] = "oglasi.grad = '$grad'";
-				
+
 				if(!empty($cenaOd) &&  !empty($cenaDo))
 					$conditions[] = "oglasi.cena BETWEEN '$cenaOd' AND '$cenaDo'";
-				
+
 				if(!empty($povrshinaOd) &&  !empty($povrshinaDo))
 					$conditions[] = "oglasi.cena BETWEEN '$povrshinaOd' AND '$povrshinaDo'";
-				
+
 				if(!empty($brSobi))
 					$conditions[] = "oglasi.broj_sobi >= '$brSobi'";
-				   
-				 $query = $sql;  
-				 if(count($conditions) > 0){
-					 $sql .= " AND ".implode(' AND ',$conditions);
-				 }  
-				 
-				 $sql .= " GROUP BY sliki.oglasID
+
+				$query = $sql;  
+				if(count($conditions) > 0){
+					$sql .= " AND ".implode(' AND ',$conditions);
+				}  
+
+				$sql .= " GROUP BY sliki.oglasID
 				 		  LIMIT " . $stranaOD.','.$zapisi_naStrana;
-				   
-				   
-				 $sendSQL =  mysqli_query($conn,$sql)or die("Error");		
-				
+
+
+				$sendSQL =  mysqli_query($conn,$sql)or die("Error");		
+
+				$oglasi = mysqli_num_rows($sendSQL);
+				echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';  
+				echo $oglasi;				
+				echo '</strong></p>';
+
 				while ($row = mysqli_fetch_array($sendSQL)){
 					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
 					echo "<div class ='oglas'>";
@@ -106,13 +112,21 @@ include"header.php";
 					echo "</a>";
 				} 
 			}
-			else {
+			else if(isset($_POST['baraj_po_klucenZbor'])){
+				$klucenZbor = $_POST['klucenZbor'];
+
 				$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi 
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
+				WHERE oglasi.naslov LIKE '%$klucenZbor%'
 				GROUP BY sliki.oglasID
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
 
+
+				$oglasi = mysqli_num_rows($sql);
+				echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';  
+				echo $oglasi;				
+				echo '</strong></p>';
 				while ($row = mysqli_fetch_array($sql)){
 					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
 					echo "<div class ='oglas'>";
@@ -136,10 +150,45 @@ include"header.php";
 				} 
 
 			}
+			else {
+				$sql = mysqli_query($conn,"SELECT *
+				FROM oglasi 
+				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
+				GROUP BY sliki.oglasID
+				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
+
+
+				$oglasi = mysqli_num_rows($sql);
+				echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';  
+				echo $oglasi;				
+				echo '</strong></p>';
+				while ($row = mysqli_fetch_array($sql)){
+					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<div class ='oglas'>";
+
+					echo "<img src='uploads/".$row['imeSlika']."' />";
+
+					echo '<div class="oglas-text">';
+					echo $row['naslov'];
+
+					//if($row['cena'] == 0)
+
+					switch($row['tip_cena']){
+						case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
+						case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
+					}
+
+
+					echo "</div>";
+					echo "</div>";
+					echo "</a>";
+				} 
+
+
+			}
 
 		}					
 		?>
-
 		<div class="text-center" >
 
 			<ul class="pagination">
@@ -236,7 +285,7 @@ include"header.php";
 					<td ><input type='text' size="4" placeholder="До" name="cenaDo" class="form-control"></td>
 				</tr>
 			</table>
-			
+
 			<p class="text-muted" style="font-size:15px;margin:5px;">Површина:</p>
 
 			<table>
@@ -249,8 +298,8 @@ include"header.php";
 
 			<p class="text-muted" style="font-size:15px;margin:5px;">Број на соби:</p>
 			<input type='text'plaseholder="Внесете број на соби" name="brSobi" class="form-control"><br>
-			
-			
+
+
 			<input type="submit" value="Барај" name="filter" class="btn btn-default btn-success">
 
 		</form>

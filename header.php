@@ -19,17 +19,14 @@
 			<div style="width:100%;height:80px;">
 				
 
-					<form class="navbar-form" style="float:right; ">
+					<form action="index.php" method="post" class="navbar-form" style="float:right; ">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
+							<input type="text" name="klucenZbor" class="form-control" placeholder="Search">
 						</div>
 
-						
+						<input type="submit" name="baraj_po_klucenZbor" class="btn btn-primary navbar-btn" value="Пребарај">
 						<button type="button" class="btn btn-primary  navbar-btn">Најави се</button>
-					</form>
-
-
-				
+					</form>		
 			</div>
 			<div style="width:100%;height:180px; background-color:whitesmoke; border-radius: 5px; margin-bottom:30px;">
 				
