@@ -28,49 +28,83 @@ include"header.php";
 
 
 			if(isset($_POST['filter'])){
-				$kategorija = $_POST['kategorija'];
-				$tip_objekt = $_POST['tip_objekti'];
-				$enterier = $_POST['enterier'];
-				$grad = $_POST['grad'];
+				
+				$kategorija = $tip_objekt = $enterier = $grad = "";
+				
+				if(isset($_POST['kategorija']))
+					$kategorija = $_POST['kategorija'];
+				if(isset($_POST['tip_objekti']))
+					$tip_objekt = $_POST['tip_objekti'];
+				if(isset($_POST['enterier']))
+					$enterier = $_POST['enterier'];
+				if(isset($_POST['grad']))
+					$grad = $_POST['grad'];
+				
+				
 				$cenaOd = $_POST['cenaOd'];
 				$cenaDo = $_POST['cenaDo'];
+				$povrshinaOd = $_POST['povrshinaOd'];
+				$povrshinaDo = $_POST['povrshinaDo'];
 				$brSobi = $_POST['brSobi'];
 
+				
+				$sql = "SELECT *
+				
+						FROM oglasi INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID),kategorija,tip_objekt,enterier	
+						
+						WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id";
+				
+				$conditions = array();
+				if(!empty($kategorija))
+					$conditions[] = "kategorija.ime_kategorija = '$kategorija'";
+				if(!empty($tip_objekt))
+					$conditions[] = "tip_objekt.ime_objekt='$tip_objekt'";
+				if(!empty($enterier))
+					$conditions[] = "enterier.ime_enterier = '$enterier'";
+				if(!empty($grad))
+					$conditions[] = "oglasi.grad = '$grad'";
+				
+				if(!empty($cenaOd) &&  !empty($cenaDo))
+					$conditions[] = "oglasi.cena BETWEEN '$cenaOd' AND '$cenaDo'";
+				
+				if(!empty($povrshinaOd) &&  !empty($povrshinaDo))
+					$conditions[] = "oglasi.cena BETWEEN '$povrshinaOd' AND '$povrshinaDo'";
+				
+				if(!empty($brSobi))
+					$conditions[] = "oglasi.broj_sobi >= '$brSobi'";
+				   
+				 $query = $sql;  
+				 if(count($conditions) > 0){
+					 $sql .= " AND ".implode(' AND ',$conditions);
+				 }  
+				 
+				 $sql .= " GROUP BY sliki.oglasID
+				 		  LIMIT " . $stranaOD.','.$zapisi_naStrana;
+				   
+				   
+				 $sendSQL =  mysqli_query($conn,$sql)or die("Error");		
+				
+				while ($row = mysqli_fetch_array($sendSQL)){
+					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<div class ='oglas'>";
 
-				$sql = mysqli_query($conn,"SELECT *
-FROM oglasi INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID),kategorija,tip_objekt,enterier	
-
-WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id AND
-
-kategorija.ime_kategorija = '$kategorija' AND tip_objekt.ime_objekt='$tip_objekt' AND enterier.ime_enterier = '$enterier' AND oglasi.grad = '$grad' AND oglasi.cena BETWEEN '$cenaOd' AND '$cenaDo' AND oglasi.broj_sobi >= '$brSobi'
-GROUP BY sliki.oglasID
-LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
-
-				while ($row = mysqli_fetch_array($sql)){
-					echo "<div class ='oglas'> 
-					<a href='oglas.php?id=".$row['id']. "'>";
-
-					
 					echo "<img src='uploads/".$row['imeSlika']."' />";
-					
-					echo "</a>";
 
 					echo '<div class="oglas-text">';
 					echo $row['naslov'];
 
 					//if($row['cena'] == 0)
-					echo "<br>Цена:".$row['cena'];
-					
-					
-					if($row['tip_cena'] == "Евра")
-						echo' &euro;';
-					else if($row['tip_cena'] == "Денари")
-						echo' ден.;';
-					
-					echo "</div>";
-					echo "</div>";
-				} 
 
+					switch($row['tip_cena']){
+						case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
+						case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
+					}
+
+
+					echo "</div>";
+					echo "</div>";
+					echo "</a>";
+				} 
 			}
 			else {
 				$sql = mysqli_query($conn,"SELECT *
@@ -80,28 +114,25 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");	
 
 				while ($row = mysqli_fetch_array($sql)){
-					echo "<div class ='oglas'> 
-					<a href='oglas.php?id=".$row['id']. "'>";
+					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<div class ='oglas'>";
 
-					
 					echo "<img src='uploads/".$row['imeSlika']."' />";
-					
-					echo "</a>";
 
 					echo '<div class="oglas-text">';
 					echo $row['naslov'];
 
 					//if($row['cena'] == 0)
-					echo "<br>Цена:".$row['cena'];
-					
-					
-					if($row['tip_cena'] == "Евра")
-						echo' &euro;';
-					else if($row['tip_cena'] == "Денари")
-						echo' ден.;';
-					
+
+					switch($row['tip_cena']){
+						case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
+						case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
+					}
+
+
 					echo "</div>";
 					echo "</div>";
+					echo "</a>";
 				} 
 
 			}
@@ -142,8 +173,8 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 		<form action="index.php" method="post">
 			<p class="text-muted" style="font-size:15px;margin:5px;"> Категорија:</p>
 
-			<select name="kategorija" class="selectpicker show-tick">			
-
+			<select name="kategorija" class="selectpicker">			
+				<option  selected disabled>Изберете категорија</option>
 				<?php
 				$result=mysqli_query($conn,"SELECT * FROM kategorija");
 				while($row = mysqli_fetch_array($result)){
@@ -156,8 +187,8 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				?>
 			</select>	
 			<p class="text-muted" style="font-size:15px;margin:5px;"> Тип на недвижнина:</p>
-			<select name="tip_objekti" name="kategorija" class="selectpicker show-tick">			
-
+			<select name="tip_objekti" name="kategorija" class="selectpicker">			
+				<option  selected disabled>Изберете објект</option>
 				<?php
 				$result=mysqli_query($conn,"SELECT * FROM tip_objekt");
 				while($row = mysqli_fetch_array($result)){
@@ -170,8 +201,8 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				?>
 			</select>	
 			<p class="text-muted" style="font-size:15px;margin:5px;"> Ентериер:</p>
-			<select name="enterier" name="kategorija" class="selectpicker show-tick">			
-
+			<select name="enterier" name="kategorija" class="selectpicker">			
+				<option  selected disabled>Изберете ентериер</option>
 				<?php
 				$result=mysqli_query($conn,"SELECT * FROM enterier");
 				while($row = mysqli_fetch_array($result)){
@@ -184,8 +215,8 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				?>
 			</select>	
 			<p class="text-muted" style="font-size:15px;margin:5px;"> Град:</p>
-			<select name="grad" name="kategorija" class="selectpicker show-tick">			
-
+			<select name="grad" name="kategorija" class="selectpicker">			
+				<option  selected disabled>Изберете град</option>
 				<?php
 				$result=mysqli_query($conn,"SELECT  DISTINCT grad FROM oglasi");
 				while($row = mysqli_fetch_array($result)){
@@ -197,16 +228,29 @@ LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				} //end while				
 				?>
 			</select>	
-
 			<p class="text-muted" style="font-size:15px;margin:5px;">Цена:</p>
 
+			<table>
+				<tr>
+					<td ><input type='text' size="4" placeholder="Од" name="cenaOd" class="form-control"></td>
+					<td ><input type='text' size="4" placeholder="До" name="cenaDo" class="form-control"></td>
+				</tr>
+			</table>
+			
+			<p class="text-muted" style="font-size:15px;margin:5px;">Површина:</p>
 
-			<input type='text' size="4" placeholder="Од" name="cenaOd" class="form-control">
-			<input type='text' size="4" placeholder="До" name="cenaDo" class="form-control">
+			<table>
+				<tr>
+					<td ><input type='text' size="4" placeholder="Од" name="povrshinaOd" class="form-control"></td>
+					<td ><input type='text' size="4" placeholder="До" name="povrshinaDo" class="form-control"></td>
+				</tr>
+			</table>
+
 
 			<p class="text-muted" style="font-size:15px;margin:5px;">Број на соби:</p>
 			<input type='text'plaseholder="Внесете број на соби" name="brSobi" class="form-control"><br>
-
+			
+			
 			<input type="submit" value="Барај" name="filter" class="btn btn-default btn-success">
 
 		</form>

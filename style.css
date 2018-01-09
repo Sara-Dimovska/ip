@@ -18,7 +18,7 @@
 	width: 830px;
 	overflow: hidden;
 	display: inline-block;	
-	border-radius: 5px;
+	 
 	margin-bottom: 30px;
 
 }
@@ -74,6 +74,50 @@
 	z-index: 1;
 
 }
+#Holder{
+	width: 600px;
+	height: 510px;
+	margin-left: 30px;
+	background-color: silver;
+	padding: 10px;
+}
+#golemaSlika-Holder{
+	width: 580px;
+	height: 400px;
+	background-color: whitesmoke;
+	
+}
+#golemaSlika-Holder img{
+	width: 580px;
+	height: 400px;
+	
+	
+}
+#malaSlika-Holder{
+	width: 580px;
+	height: 90px;
+	background-color: whitesmoke;
+	margin: 2px auto;	
+	overflow: auto;
+}
+
+#malaSlika-Holder  img{
+	height: 90px;
+	widows: 90px;
+	display: block;
+	float: left;
+	margin: 2px;
+	transition: border-radius 0.3s linear 0s;
+	
+	
+}
+#malaSlika-Holder img:hover{
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+
+
 
 .nav-left .btn-default:hover {
 	background-color: #840303 !important;
@@ -110,12 +154,19 @@
 .nav-left
 {
 	float: left;
-	padding: 110px 0 0 80px;
+	padding: 110px 0 0 60px !important;
+	
 
 }
-table{
+
+.left table{
 	margin: 50px;	
 }
-td, th {
+.left td, th {
 	padding: 10px !important;
+}
+hr{
+	border-top: 1px solid black; 
+	width:700px;
+	margin-left: 30px;
 }

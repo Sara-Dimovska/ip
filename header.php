@@ -14,19 +14,26 @@
 
 
 
-		<nav class="navbar navbar-default" style="background:url('assets/asd.jpg');width:100%;
-	height:250px;
-	
-	overflow: hidden;">
 			<div class="container-fluid">
 			
-			
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header" style="
-												  height: 200px;
-												  ">
-					
-				</div>
+			<div style="width:100%;height:80px;">
+				
+
+					<form class="navbar-form" style="float:right; ">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+
+						
+						<button type="button" class="btn btn-primary  navbar-btn">Најави се</button>
+					</form>
+
+
+				
+			</div>
+			<div style="width:100%;height:180px; background-color:whitesmoke; border-radius: 5px; margin-bottom:30px;">
+				
+				<img src="assets/logo.png" style="float:left; margin:10px;">
 
 				<div class="nav-left">
 					<a href="index.php" class="btn btn-default  navbar-btn" style="
@@ -46,19 +53,9 @@
 																		   ">За нас</a>													   
 
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-					<form class="navbar-form" style="  ">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-
-						
-						<button type="button" class="btn btn-primary  navbar-btn">Најави се</button>
-					</form>
-
-
-				</div><!-- /.navbar-collapse -->
+			</div>
+				
+				
+				
 			</div><!-- /.container-fluid -->
-		</nav>
+		

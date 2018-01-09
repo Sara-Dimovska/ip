@@ -42,7 +42,7 @@ if(isset($_POST['vnesiOglas'])){
 	}
 
 	$sprat = $_POST['sprat'];
-	$vkupno_spratovi = $_POST['vkupno_spratovi'];
+	//$vkupno_spratovi = $_POST['vkupno_spratovi'];
 
 	$lift = $_POST['lift'];
 
@@ -61,8 +61,8 @@ if(isset($_POST['vnesiOglas'])){
 	
 	// prikazi_telefon tip_cena lokacija
 	// vo bazata oglasi
-	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,sprat,vkupno_spratovi,lift,cena,tip_cena,lokacija,grad,objaven_na) 	
-	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$sprat','$vkupno_spratovi','$lift','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
+	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,sprat,lift,cena,tip_cena,lokacija,grad,objaven_na) 	
+	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$sprat','$lift','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 
 	$result = mysqli_query($conn,$sql);
 
@@ -174,7 +174,7 @@ if(isset($_POST['vnesiOglas'])){
 				</tr>
 
 				<tr >
-					<td style="font-size:15px;margin:5px;" >Квадратура:</td>	
+					<td style="font-size:15px;margin:5px;" >Површина:</td>	
 					<td ><input type='text' name="kvadratura" class="form-control"></td>	
 					<td style="font-size:15px;margin:5px;">m<sup>2</sup></td>
 
@@ -230,11 +230,6 @@ if(isset($_POST['vnesiOglas'])){
 
 				</tr>
 				<tr>
-					<td style="font-size:15px;margin:5px;">Вкупно спратови:</td>	
-					<td ><input type='text'name='vkupno_spratovi' class="form-control"></td>	
-
-				</tr>
-				<tr>
 					<td style="font-size:15px;margin:5px;">Адреса:</td>	
 					<td ><input type='text'name='lokacija' class="form-control"></td>	
 
@@ -250,12 +245,11 @@ if(isset($_POST['vnesiOglas'])){
 				</tr>
 				<tr>
 					<td  style="font-size:15px;margin:5px;">Цена:</td>	
-					<td ><input type='text' name="cena" class="form-control"></td>
+					<td ><input type='text' name="cena" class="form-control" id = "cenaVnes"></td>
 					<td>
-						<select name="tip_cena" class="selectpicker show-tick">
-							<option value="Евра">Евра</option>
-							<option value="Денари">Денари</option>	
-							<option value="По договор">По договор</option>						
+						<select name="tip_cena" class="selectpicker show-tick" id="tipCena" onchange="cenaDisable()">
+							<option value="Евра">Евра</option>						
+							<option value="По договор" >По договор</option>						
 						</select>	
 					</td>		
 
@@ -277,7 +271,16 @@ if(isset($_POST['vnesiOglas'])){
 
 	</div>
 </div>
-
+<script type="text/javascript">
+	 function cenaDisable(){
+		 if(document.getElementById("tipCena").value == "По договор"){
+			document.getElementById("cenaVnes").disabled = true;			 
+		 }else{
+			 document.getElementById("cenaVnes").disabled = false;	
+		 }
+	 }
+		 
+</script>
 </body>
 <footer class="panel-footer">
 
