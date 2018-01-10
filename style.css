@@ -12,7 +12,7 @@
 	width: auto;
 }
 .left{
-	float: left; /* not needed, just for clarification */
+	float: left; 
 	background-color: whitesmoke;
 	padding-left: 10px;
 	width: 830px;
@@ -128,6 +128,7 @@
 	color: white !important ;
 	background-color: #dd6464 !important;
 }
+
 
 .styleHr{
 	border-top: 1px solid #8c8b8b;

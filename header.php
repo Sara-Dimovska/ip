@@ -21,7 +21,7 @@
 
 					<form action="index.php" method="post" class="navbar-form" style="float:right; ">
 						<div class="form-group">
-							<input type="text" name="klucenZbor" class="form-control" placeholder="Search">
+							<input type="text" name="klucenZbor" class="form-control" placeholder="клучен збор">
 						</div>
 
 						<input type="submit" name="baraj_po_klucenZbor" class="btn btn-primary navbar-btn" value="Пребарај">

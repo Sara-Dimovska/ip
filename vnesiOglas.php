@@ -1,14 +1,10 @@
 <?php
 include("connection.php");
 include"header.php";
-
 if(isset($_POST['vnesiOglas'])){
-
-
-
-	$kategorija = $_POST['kategorija'];
-	$tip_objekt = $_POST['tip_objekt'];
-
+	
+	$kategorija = mysqli_real_escape_string($conn,$_POST['kategorija']);
+	$tip_objekt = mysqli_real_escape_string($conn,$_POST['tip_objekt']);
 	switch($kategorija){
 		case 'Издавање': $kategorija=1;break;
 		case 'Продажба': $kategorija=2;break;
@@ -18,21 +14,18 @@ if(isset($_POST['vnesiOglas'])){
 		case 'Спрат од куќа': $tip_objekt=2;break;
 		case 'Куќа': $tip_objekt=3;break;
 	}
-
-	$grad = $_POST['grad'];
-	$naslov = $_POST['naslov'];
-	$opis = $_POST['opis'];
-	$kvadratura = $_POST['kvadratura'];
-	$enterier = $_POST['enterier'];
-
+	$grad = mysqli_real_escape_string($conn,$_POST['grad']);
+	$naslov = mysqli_real_escape_string($conn,$_POST['naslov']);
+	$opis = mysqli_real_escape_string($conn,$_POST['opis']);
+	$kvadratura = mysqli_real_escape_string($conn,$_POST['kvadratura']);
+	$enterier = mysqli_real_escape_string($conn,$_POST['enterier']);
 	switch($enterier){
 		case 'наместен': $enterier=1;break;
 		case 'делумно наместен': $enterier=2;break;
 		case 'ненаместен': $enterier=3;break;
 	}
-
-	$brSobi = $_POST['brSobi'];
-	$greenje = $_POST['greenje'];
+	$brSobi = mysqli_real_escape_string($conn,$_POST['brSobi']);
+	$greenje = mysqli_real_escape_string($conn,$_POST['greenje']);
 	switch($greenje){
 		case 'Нема': $greenje=1;break;
 		case 'Централно': $greenje=2;break;
@@ -40,55 +33,42 @@ if(isset($_POST['vnesiOglas'])){
 		case 'Дрва': $greenje=4;break;
 		case 'Друго': $greenje=5;break;
 	}
-
-	$sprat = $_POST['sprat'];
-	//$vkupno_spratovi = $_POST['vkupno_spratovi'];
-
-	$lift = $_POST['lift'];
-
-	switch($lift){
-		case 'Да': $lift=1;break;
-		case 'Не': $lift=0;break;
-	}
-	$cena = $_POST['cena'];
-	$tip_cena = $_POST['tip_cena'];
-	$lokacija = $_POST['lokacija'];
+	
+	
+	if(isset($_POST['cena']))
+		$cena = mysqli_real_escape_string($conn,$_POST['cena']);
+	
+	
+	$tip_cena = mysqli_real_escape_string($conn,$_POST['tip_cena']);
+	$lokacija = mysqli_real_escape_string($conn,$_POST['lokacija']);
 	
 	$objaven_na = date("Y.m.d");
-
-	$korisnik = 1; 
-
+	$prikaziTelefon = $_POST['prikaziTelefon'];
 	
-	// prikazi_telefon tip_cena lokacija
-	// vo bazata oglasi
-	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,sprat,lift,cena,tip_cena,lokacija,grad,objaven_na) 	
-	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$sprat','$lift','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
-
+	$korisnik = 1; 
+	
+	// prikazi_telefon 
+	// Vnesi vo bazata oglasi
+	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,prikazi_telefon,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,cena,tip_cena,lokacija,grad,objaven_na) 	
+	VALUES('$tip_objekt','$kategorija','$korisnik','$prikaziTelefon','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$lift','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 	$result = mysqli_query($conn,$sql);
-
 	if($result){
 		echo"okej";
 	}
-
+		
+	
+	// Vnesi vo bazata sliki
 	$id_naVnesenOglas = mysqli_insert_id($conn);
-
-
-
 	// za povekje sliki 
 	$target_dir = "uploads/";
 	for($i=0;$i<count($_FILES["prikaciSlika"]["name"]);$i++){
-
 		$target_file = $target_dir . basename($_FILES["prikaciSlika"]["name"][$i]);
-
 		// zemi ja ekstenzijata
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
 		// validni ekstenzii
 		$extensions_arr = array("jpg","jpeg","png","gif");
-
 		// Check extension
 		if( in_array($imageFileType,$extensions_arr) ){
-
 			// vo bazata na sliki
 			$sql = "INSERT INTO sliki(oglasID) VALUES('$id_naVnesenOglas')";
 			mysqli_query($conn,$sql);
@@ -96,17 +76,11 @@ if(isset($_POST['vnesiOglas'])){
 			$vnesenaSlika = $idSlika.".".$imageFileType; // ime na slikata e id.extenzija
 			$sql = "UPDATE sliki SET imeSlika = '$vnesenaSlika' WHERE id = '$idSlika'";
 			mysqli_query($conn,$sql);
-
-
 			// smesti go fajlot vo papkata uploads
 			move_uploaded_file($_FILES['prikaciSlika']['tmp_name'][$i],$target_dir.$vnesenaSlika);
-
 		}
-
-
 	}
-
-	mysqli_close($conn);
+	//mysqli_close($conn);
 }
 ?>
 
@@ -118,8 +92,8 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 					<td style="font-size:15px;margin:5px;">Изберете Категорија</td>
 					<td>
-						<select name="kategorija" class="selectpicker show-tick">
-							<option value="" selected disabled>Категорија</option>
+						<select required  name="kategorija"  class="form-control">
+							<option value="" selected disabled></option>
 							<option value="Издавање">Издавање</option>
 							<option value="Продажба">Продажба</option>
 						</select>
@@ -129,8 +103,8 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 					<td style="font-size:15px;margin:5px;">Недвижнина:</td>
 					<td>
-						<select name="tip_objekt" class="selectpicker show-tick">
-							<option value="" selected disabled>Тип на објект</option>
+						<select required name="tip_objekt" class="form-control">
+							<option value=""selected disabled ></option>
 							<option value="Стан">Стан</option>
 							<option value="Спрат од куќа">Спрат од куќа</option>
 							<option value="Куќа">Куќа</option>						
@@ -141,8 +115,8 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 					<td style="font-size:15px;margin:5px;">Град</td>
 					<td>
-						<select name="grad" class="selectpicker show-tick">
-							<option value="" selected disabled>Изберете град</option>
+						<select  required name="grad" class="form-control">
+							<option value=""selected disabled></option>
 							<option value="Скопје">Скопје</option>
 							<option value="Штип">Штип</option>
 							<option value="Битола">Битола</option>
@@ -160,14 +134,14 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 
 					<td  style="font-size:15px;margin:5px;">Наслов на огласот:</td>
-					<td><input type='text' name="naslov" class="form-control"></td>
+					<td><input required type='text' name="naslov" class="form-control"></td>
 				</tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">Опис:</td>
 					<td >
 
 						<div class="form-group">
-							<textarea class="form-control" name = 'opis' id="exampleFormControlTextarea1" rows="5"></textarea>
+							<textarea required class="form-control" name = 'opis' id="exampleFormControlTextarea1" rows="5"></textarea>
 						</div>
 
 
@@ -175,7 +149,7 @@ if(isset($_POST['vnesiOglas'])){
 
 				<tr >
 					<td style="font-size:15px;margin:5px;" >Површина:</td>	
-					<td ><input type='text' name="kvadratura" class="form-control"></td>	
+					<td ><input required type='text' name="kvadratura" class="form-control"></td>	
 					<td style="font-size:15px;margin:5px;">m<sup>2</sup></td>
 
 				</tr>
@@ -184,8 +158,8 @@ if(isset($_POST['vnesiOglas'])){
 						Ентриер:
 					</td>
 					<td>
-						<select  name="enterier" class="selectpicker show-tick">
-							<option value="" selected disabled>Изберете ентериер</option>
+						<select required name="enterier" class="form-control">
+							<option value="" selected disabled></option>
 							<option value ="наместен" >наместен</option>
 							<option value="делумно наместен">делумно наместен</option>
 							<option value="ненаместен">ненаместен</option>
@@ -196,7 +170,7 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 					<td style="font-size:15px;margin:5px;">Соби:</td>
 					<td>
-						<select name="brSobi" class="selectpicker show-tick">
+						<select required name="brSobi" class="form-control">
 							<option value="" selected disabled>број на соби</option>
 							<option value="1" >1</option>
 							<option value="2">2</option>
@@ -214,7 +188,7 @@ if(isset($_POST['vnesiOglas'])){
 				<tr>
 					<td style="font-size:15px;margin:5px;">Греење:</td>
 					<td>
-						<select  name = 'greenje' class="selectpicker show-tick">
+						<select required name = 'greenje' class="form-control">
 							<option value="" selected disabled>Тип на греење</option>
 							<option value="Нема">Нема</option>
 							<option value="Централно">Централно</option>
@@ -224,30 +198,19 @@ if(isset($_POST['vnesiOglas'])){
 						</select>	
 					</td>	
 				</tr>
-				<tr>
-					<td style="font-size:15px;margin:5px;">Спрат:</td>	
-					<td ><input type='text'name="sprat" class="form-control"></td>	
-
-				</tr>
+			
 				<tr>
 					<td style="font-size:15px;margin:5px;">Адреса:</td>	
-					<td ><input type='text'name='lokacija' class="form-control"></td>	
+					<td ><input required type='text'name='lokacija' class="form-control"></td>	
 
 				</tr>		
-				<tr>
-					<td style="font-size:15px;margin:5px;">Лифт:</td>
-					<td>
-						<select name="lift" class="selectpicker show-tick">
-							<option value="Да">Да</option>
-							<option value="Не">Не</option>							
-						</select>	
-					</td>	
-				</tr>
+				
 				<tr>
 					<td  style="font-size:15px;margin:5px;">Цена:</td>	
-					<td ><input type='text' name="cena" class="form-control" id = "cenaVnes"></td>
+					<td ><input required type='text' name="cena" class="form-control" id = "cenaVnes"></td>
 					<td>
-						<select name="tip_cena" class="selectpicker show-tick" id="tipCena" onchange="cenaDisable()">
+						<select required name="tip_cena" class="form-control" id="tipCena" onchange="cenaDisable()">
+							<option selected disabled></option>
 							<option value="Евра">Евра</option>						
 							<option value="По договор" >По договор</option>						
 						</select>	
@@ -256,8 +219,12 @@ if(isset($_POST['vnesiOglas'])){
 				</tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">Прикачи слики:</td>	
-					<td><input type="file" class="btn btn-default" name="prikaciSlika[]" multiple value="Прикачи"></td>	
+					<td><input required type="file" class="btn btn-default" name="prikaciSlika[]" multiple value="Прикачи"></td>	
 
+				</tr>
+				<tr>					
+					<td><input type="checkbox" name="prikaziTelefon" value="Da"/> Прикажи телефон во огласот</td>
+					
 				</tr>
 				<tr >
 					<td>
@@ -286,21 +253,5 @@ if(isset($_POST['vnesiOglas'])){
 
 </footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
