@@ -24,11 +24,10 @@ include"header.php";
 
 				$id = mysqli_real_escape_string($conn,$_GET["id"]);
 
-				// dali posoe id vo bazata
-				$sql = mysqli_query($conn,"SELECT COUNT(*) AS total from oglasi Where oglasID = '$id'");
 
-				if($row = mysqli_fetch_array($sql)) { // ako postoi id vo bazata
-					$sql = mysqli_query($conn,"SELECT oglasID,naslov,oglasi.prikazi_telefon,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.mail,korisnici.telefon
+
+
+				$sql = mysqli_query($conn,"SELECT oglasID,naslov,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.email,korisnici.telefon
 
 				FROM oglasi,enterier,tip_objekt,tip_greenje,korisnici
 
@@ -36,43 +35,40 @@ include"header.php";
 				AND oglasID = '$id'
 				") or die("Error query".mysqli_connect_error());
 
-					if($row = mysqli_fetch_array($sql)){
-						$naslov = $row['naslov'];
-						$prikazi_telefon = $row['prikazi_telefon'];
-						$opis = $row['opis'];
-						$lokacija = $row['lokacija'];
-						$grad = $row['grad'];
-						$tip_cena = $row['tip_cena'];
-						$cena = $row['cena'];
-						$kvadratura=$row['kvadratura'];
-						$tip_objekt = $row['ime_objekt'];					
-						//$sprat  = $row['sprat'];
-						
-						$objavenNa = $row['objaven_na'];
-						$godIzgradba = $row['godina_izgradba'];
-						$enterier = $row['ime_enterier'];
-						$tip_greenje = $row['ime_tip'];
-						$ime_objekt = $row['ime_objekt'];
-						$oglasuvac = $row['ime'];
-						$mail = $row['mail'];
-						$telefon = $row['telefon'];
-						$brSobi = $row['broj_sobi'];
+				if($row = mysqli_fetch_array($sql)){
+					$naslov = $row['naslov'];
 
-					}
+					$opis = $row['opis'];
+					$lokacija = $row['lokacija'];
+					$grad = $row['grad'];
+					$tip_cena = $row['tip_cena'];
+					$cena = $row['cena'];
+					$kvadratura=$row['kvadratura'];
+					$tip_objekt = $row['ime_objekt'];					
+					//$sprat  = $row['sprat'];
 
-					$sql = mysqli_query($conn,"SELECT imeSlika
+					$objavenNa = $row['objaven_na'];
+					$godIzgradba = $row['godina_izgradba'];
+					$enterier = $row['ime_enterier'];
+					$tip_greenje = $row['ime_tip'];
+					$ime_objekt = $row['ime_objekt'];
+					$oglasuvac = $row['ime'];
+					$mail = $row['email'];
+					$telefon = $row['telefon'];
+					$brSobi = $row['broj_sobi'];
+
+				}
+
+				$sql = mysqli_query($conn,"SELECT imeSlika
 											FROM sliki
 											WHERE oglasID = '$id'");
-					$sliki = array();
-					while($row = mysqli_fetch_array($sql)){
-						$sliki[] = $row;
-					}
+				$sliki = array();
+				while($row = mysqli_fetch_array($sql)){
+					$sliki[] = $row;
+				}
 
-					$prvaGolemaSlika =  reset($sliki);
-				}
-				else{ // ako ne postoi Id vo bazata
-					echo "<h3>Internal Server error</h3>";
-				}
+				$prvaGolemaSlika =  reset($sliki);
+
 
 
 			}
@@ -137,11 +133,10 @@ include"header.php";
 				<td>
 					<?=$oglasuvac; ?>
 				</td>
-				<td>
-					<?php 
-					if($prikazi_telefon == "Да"){
-						echo $telefon;
-					}
+				<td><?=
+
+	$telefon;
+
 					?>
 				</td>
 				<td style="color:blue;">
