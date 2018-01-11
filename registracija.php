@@ -5,13 +5,13 @@
  * Date: 06-Jan-18
  * Time: 9:06 PM
  */
-
+include "header.php";
 require_once("./include/korisnicka_strana.php");
 if(isset($_POST['submitted']))
 {
     if($fgmembersite->RegisterUser())
     {
-        $fgmembersite->RedirectToURL("thank-you.html");
+        $fgmembersite->RedirectToURL("thank-you.php");
     }
 }
 
@@ -27,6 +27,9 @@ if(isset($_POST['submitted']))
     <script src="scripts/pwdwidget.js" type="text/javascript"></script>
 </head>
 <body>
+
+
+<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
 
 <!-- Form Code Start -->
 <div id='fg_membersite'>
@@ -65,11 +68,12 @@ if(isset($_POST['submitted']))
             </div>
 
             <div class='container'>
-                <input type='submit' name='Submit' value='Испрати' />
+                <input type='submit' class="btn btn-success navbar-btn" name='Submit' value='Испрати' />
             </div>
 
         </fieldset>
     </form>
+	</div>
     <!-- client-side Form Validations:
     Uses the excellent form validation script from JavaScript-coder.com-->
 

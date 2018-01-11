@@ -1,13 +1,14 @@
 
 #fg_membersite fieldset
 {
-    width: 230px;
+    width: 300px;
     padding:20px;
     border:1px solid #ccc;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
+	margin: 30 auto;
 }
 
 #fg_membersite legend, #fg_membersite h2
@@ -15,7 +16,7 @@
     font-family : Arial, sans-serif;
     font-size: 1.3em;
     font-weight:bold;
-    color:#333;
+    color:#dd6464;
 }
 
 #fg_membersite label
@@ -85,9 +86,10 @@
 #fg_membersite .error
 {
     font-family: Verdana, Arial, sans-serif;
-    font-size: 0.7em;
+    font-size: 10px;
     color: #900;
-    background-color : #ffff00;
+    background-color : #FFFF99;
+	display: inline;
 }
 
 #fg_membersite #register_password_errorloc
@@ -116,7 +118,7 @@
 #fg_membersite .short_explanation
 {
     font-family : Arial, sans-serif;
-    font-size: 0.6em;
+    font-size: 10px;
     color:#333;
 }
 

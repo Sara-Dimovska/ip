@@ -5,6 +5,7 @@
  * Date: 08-Jan-18
  * Time: 4:47 PM
  */
+include "header.php";
 require_once("./include/korisnicka_strana.php");
 
 if(isset($_POST['submitted']))
@@ -26,6 +27,7 @@ if(isset($_POST['submitted']))
 </head>
 <body>
 
+<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
 <!-- Form Code Start -->
 <div id='fg_membersite'>
     <form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
@@ -49,7 +51,7 @@ if(isset($_POST['submitted']))
             </div>
 
             <div class='container'>
-                <input type='submit' name='Submit' value='Испрати' />
+                <input type='submit' name='Submit' class="btn btn-success navbar-btn" value='Испрати' />
             </div>
             <div class='short_explanation'><a href='reset-pwd-req.php'>Ја заборавивте лозинката?</a></div>
         </fieldset>
@@ -71,6 +73,7 @@ if(isset($_POST['submitted']))
         // ]]>
     </script>
 </div>
+	</div>
 <!--
 Form Code End (see html-form-guide.com for more info.)
 -->
