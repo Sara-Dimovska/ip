@@ -40,7 +40,7 @@ include"connection.php";
 																					 ">Помош</button>
 					<button type="button" class="btn btn-default  navbar-btn" style="
 																					 display: inline-block;
-																					 ">Регистрирај се</button>
+																					 " > <a href='registracija.php'>Регистрирај се</a></button>
 
 					<!--
 <ul style="display: block; margin-bottom:20px;" class="center">
@@ -65,7 +65,7 @@ display: inline-block;
 						</div>
 
 						<button type="submit" class="btn btn-default btn-primary">Пребарај</button>
-						<button type="button" class="btn btn-default  navbar-btn">Најави се</button>
+                        <button type="button" class="btn btn-default  navbar-btn"><a href="login.php">Најави се</a></button>
 					</form>
 
 
