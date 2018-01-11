@@ -37,6 +37,8 @@ if(isset($_POST['vnesiOglas'])){
 	
 	if(isset($_POST['cena']))
 		$cena = mysqli_real_escape_string($conn,$_POST['cena']);
+	else
+		$cena = 0;
 	
 	
 	$tip_cena = mysqli_real_escape_string($conn,$_POST['tip_cena']);

@@ -99,7 +99,6 @@ include"header.php";
 				<?php 
 				switch($tip_cena){
 					case 'Евра': echo $cena . ' &euro;'; break;
-					case 'Денари': echo $cena . ' Денари'; break;
 					case 'По договор': echo ' По договор'; break;
 				}
 				?>
