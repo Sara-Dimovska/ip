@@ -43,14 +43,15 @@ if(isset($_POST['vnesiOglas'])){
 	$lokacija = mysqli_real_escape_string($conn,$_POST['lokacija']);
 	
 	$objaven_na = date("Y.m.d");
-	$prikaziTelefon = $_POST['prikaziTelefon'];
+	
+	
 	
 	$korisnik = 1; 
 	
-	// prikazi_telefon 
+	
 	// Vnesi vo bazata oglasi
-	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,prikazi_telefon,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,cena,tip_cena,lokacija,grad,objaven_na) 	
-	VALUES('$tip_objekt','$kategorija','$korisnik','$prikaziTelefon','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$lift','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
+	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,cena,tip_cena,lokacija,grad,objaven_na) 	
+	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 	$result = mysqli_query($conn,$sql);
 	if($result){
 		echo"okej";
@@ -221,10 +222,6 @@ if(isset($_POST['vnesiOglas'])){
 					<td style="font-size:15px;margin:5px;">Прикачи слики:</td>	
 					<td><input required type="file" class="btn btn-default" name="prikaciSlika[]" multiple value="Прикачи"></td>	
 
-				</tr>
-				<tr>					
-					<td><input type="checkbox" name="prikaziTelefon" value="Da"/> Прикажи телефон во огласот</td>
-					
 				</tr>
 				<tr >
 					<td>
