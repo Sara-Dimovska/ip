@@ -28,13 +28,13 @@ include"header.php";
 				$sql = mysqli_query($conn,"SELECT COUNT(*) AS total from oglasi Where oglasID = '$id'");
 
 				if($row = mysqli_fetch_array($sql)) { // ako postoi id vo bazata
-					$sql = mysqli_query($conn,"SELECT oglasID,naslov,oglasi.prikazi_telefon,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,lift,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.mail,korisnici.telefon
+					$sql = mysqli_query($conn,"SELECT oglasID,naslov,oglasi.prikazi_telefon,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.mail,korisnici.telefon
 
 				FROM oglasi,enterier,tip_objekt,tip_greenje,korisnici
 
 				WHERE oglasi.enterier_id=enterier.enterier_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.tip_objekt_id=tip_greenje.tip_greenje_id AND oglasi.korisnik_id = korisnici.id
 				AND oglasID = '$id'
-				") or die("Error".mysqli_connect_error());
+				") or die("Error query".mysqli_connect_error());
 
 					if($row = mysqli_fetch_array($sql)){
 						$naslov = $row['naslov'];
@@ -47,7 +47,7 @@ include"header.php";
 						$kvadratura=$row['kvadratura'];
 						$tip_objekt = $row['ime_objekt'];					
 						//$sprat  = $row['sprat'];
-						$lift = $row['lift'];
+						
 						$objavenNa = $row['objaven_na'];
 						$godIzgradba = $row['godina_izgradba'];
 						$enterier = $row['ime_enterier'];

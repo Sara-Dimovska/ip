@@ -25,7 +25,8 @@
 						</div>
 
 						<input type="submit" name="baraj_po_klucenZbor" class="btn btn-primary navbar-btn" value="Пребарај">
-						<button type="button" class="btn btn-primary  navbar-btn">Најави се</button>
+						
+						<a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>
 					</form>		
 			</div>
 			<div style="width:100%;height:180px; background-color:whitesmoke; border-radius: 5px; margin-bottom:30px;">
@@ -42,7 +43,7 @@
 					<a href="#" class="btn btn-default  navbar-btn" style="
 																		   display: inline-block;
 																		   ">Помош</a>
-					<a href="#" class="btn btn-default  navbar-btn" style="
+					<a href="registracija.php" class="btn btn-default  navbar-btn" style="
 																		   display: inline-block;
 																		   ">Регистрирај се</a>
 					<a href="#" class="btn btn-default  navbar-btn" style="
