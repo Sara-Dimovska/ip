@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/vnesiOglas.php" afterPath="$PROJECT_DIR$/vnesiOglas.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,12 +16,12 @@
       <file leaf-file-name="vnesiOglas.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="54" column="90" lean-forward="true" selection-start-line="54" selection-start-column="90" selection-end-line="54" selection-end-column="90" />
               <folding>
-                <marker date="1515771900085" expanded="true" signature="1700:2107" ph="INSERT INTO `oglasi`... " />
-                <marker date="1515771900085" expanded="true" signature="2724:2778" ph="INSERT INTO sliki... " />
-                <marker date="1515771900085" expanded="true" signature="2967:3032" ph="UPDATE sliki... " />
+                <marker date="1515772207222" expanded="true" signature="1700:2108" ph="INSERT INTO `oglasi`... " />
+                <marker date="1515772207222" expanded="true" signature="2725:2779" ph="INSERT INTO sliki... " />
+                <marker date="1515772207222" expanded="true" signature="2968:3033" ph="UPDATE sliki... " />
               </folding>
             </state>
           </provider>
@@ -100,7 +99,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -177,15 +176,15 @@
       <workItem from="1515766846238" duration="36000" />
       <workItem from="1515766963452" duration="17000" />
       <workItem from="1515767049926" duration="2668000" />
-      <workItem from="1515770848073" duration="1130000" />
+      <workItem from="1515770848073" duration="1463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18181000" />
+    <option name="totallyTimeSpent" value="18514000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -561,12 +560,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="255">
+          <caret line="54" column="90" lean-forward="true" selection-start-line="54" selection-start-column="90" selection-end-line="54" selection-end-column="90" />
           <folding>
-            <marker date="1515771900085" expanded="true" signature="1700:2107" ph="INSERT INTO `oglasi`... " />
-            <marker date="1515771900085" expanded="true" signature="2724:2778" ph="INSERT INTO sliki... " />
-            <marker date="1515771900085" expanded="true" signature="2967:3032" ph="UPDATE sliki... " />
+            <marker date="1515772207222" expanded="true" signature="1700:2108" ph="INSERT INTO `oglasi`... " />
+            <marker date="1515772207222" expanded="true" signature="2725:2779" ph="INSERT INTO sliki... " />
+            <marker date="1515772207222" expanded="true" signature="2968:3033" ph="UPDATE sliki... " />
           </folding>
         </state>
       </provider>
