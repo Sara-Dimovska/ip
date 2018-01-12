@@ -17,6 +17,7 @@ if(isset($_POST['vnesiOglas'])){
 	$grad = mysqli_real_escape_string($conn,$_POST['grad']);
 	$naslov = mysqli_real_escape_string($conn,$_POST['naslov']);
 	$opis = mysqli_real_escape_string($conn,$_POST['opis']);
+    $godina_izgradba = mysqli_real_escape_string($conn,$_POST['godina_izgradba']);
 	$kvadratura = mysqli_real_escape_string($conn,$_POST['kvadratura']);
 	$enterier = mysqli_real_escape_string($conn,$_POST['enterier']);
 	switch($enterier){
@@ -50,8 +51,8 @@ if(isset($_POST['vnesiOglas'])){
 	$korisnik = 2; //ovoa e id na korisnik
 
 	// Vnesi vo bazata oglasi
-	$sql = "INSERT INTO `oglasi` ( `tip_objekt_id`, `kategorija_id`, `korisnik_id`, `naslov`, `opis`, `kvadratura`, `broj_sobi`, `enterier_id`, `tip_greenje_id`, `cena`, `tip_cena`, `lokacija`, `grad`, `objaven_na`)
-	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
+	$sql = "INSERT INTO `oglasi` ( `tip_objekt_id`, `kategorija_id`, `korisnik_id`, `naslov`, `opis`, `kvadratura`,`godina_izgradba`, `broj_sobi`, `enterier_id`, `tip_greenje_id`, `cena`, `tip_cena`, `lokacija`, `grad`, `objaven_na`)
+	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','godina_izgradba','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 	$result = mysqli_query($conn,$sql);
 	if($result){
 		echo"okej";
@@ -154,6 +155,10 @@ if(isset($_POST['vnesiOglas'])){
 					<td style="font-size:15px;margin:5px;">m<sup>2</sup></td>
 
 				</tr>
+                <tr>
+                    <td style="font-size:15px;margin:5px;">Година на изградба: </td>
+                    <td ><input required type='text' name="godina_izgradba" class="form-control"></td>
+                </tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">
 						Ентриер:
