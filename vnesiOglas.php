@@ -33,13 +33,12 @@ if(isset($_POST['vnesiOglas'])){
 		case 'Дрва': $greenje=4;break;
 		case 'Друго': $greenje=5;break;
 	}
-	
-	
+
+
 	if(isset($_POST['cena']))
 		$cena = mysqli_real_escape_string($conn,$_POST['cena']);
-	else
-		$cena = 0;
-	
+	 else
+	     $cena=0;
 	
 	$tip_cena = mysqli_real_escape_string($conn,$_POST['tip_cena']);
 	$lokacija = mysqli_real_escape_string($conn,$_POST['lokacija']);
@@ -48,11 +47,10 @@ if(isset($_POST['vnesiOglas'])){
 	
 	
 	
-	$korisnik = 1; 
-	
-	
+	$korisnik = 2; //ovoa e id na korisnik
+
 	// Vnesi vo bazata oglasi
-	$sql = "INSERT INTO oglasi(tip_objekt_id,kategorija_id,korisnik_id,naslov,opis,kvadratura,broj_sobi,enterier_id,tip_greenje_id,cena,tip_cena,lokacija,grad,objaven_na) 	
+	$sql = "INSERT INTO `oglasi` ( `tip_objekt_id`, `kategorija_id`, `korisnik_id`, `naslov`, `opis`, `kvadratura`, `broj_sobi`, `enterier_id`, `tip_greenje_id`, `cena`, `tip_cena`, `lokacija`, `grad`, `objaven_na`)
 	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 	$result = mysqli_query($conn,$sql);
 	if($result){

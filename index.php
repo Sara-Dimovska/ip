@@ -184,7 +184,7 @@ $oglasi = "";
             <select name="kategorija" class="selectpicker">
                 <option  selected disabled>Изберете категорија</option>
                 <?php
-                $result=mysqli_query($conn,"SELECT * FROM kategorija");
+                $result=mysqli_query($conn,"SELECT ime_kategorija FROM kategorija");
                 while($row = mysqli_fetch_array($result)){
                     ?>
                     <option value="<?= $row['ime_kategorija'] ?>"><?= $row['ime_kategorija'] ?></option>
