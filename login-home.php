@@ -24,7 +24,16 @@ if(!$fgmembersite->CheckLogin())
 <body>
 <div id='fg_membersite_content'>
     <h2>Почетна страна</h2>
-    Добредојдовте назад <?= $fgmembersite->UserFullName(); ?>!
+     <?php 
+		//=$fgmembersite->User_type();  
+			if ($fgmembersite->User_type() == "корисник")
+				$fgmembersite->RedirectToURL("korisnik.php");
+	
+			else if($fgmembersite->User_type() == "модератор")
+				$fgmembersite->RedirectToURL("moderator.php");
+
+		
+	?>
 
     <p><a href='change-pwd.php'>Промени лозинка</a></p>
 

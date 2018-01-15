@@ -152,7 +152,12 @@ class FGMembersite
     {
         return isset($_SESSION['name_of_user'])?$_SESSION['name_of_user']:'';
     }
-
+	function User_id(){
+		return isset($_SESSION['id_of_user'])?$_SESSION['id_of_user']:'';
+	}
+	function User_type(){
+		return isset($_SESSION['type'])?$_SESSION['type']:'nema tip';
+	}
     function UserEmail()
     {
         return isset($_SESSION['email_of_user'])?$_SESSION['email_of_user']:'';
@@ -347,7 +352,7 @@ class FGMembersite
         }
         $username = $this->SanitizeForSQL($username);
         $pwdmd5 = md5($password);
-        $qry = "Select ime, email from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y' "; // koga ke se vrati od mail potvrda togas ke moze da se logira
+        $qry = "Select * from $this->tablename where username='$username' and password='$pwdmd5' and confirmcode='y' "; // koga ke se vrati od mail potvrda togas ke moze da se logira
 
         $result = mysqli_query($this->connection, $qry);
 
@@ -361,8 +366,10 @@ class FGMembersite
 
 
         $_SESSION['name_of_user']  = $row['ime'];
+		$_SESSION['type'] = $row['tip_korisnik'];
         $_SESSION['email_of_user'] = $row['email'];
-
+		$_SESSION['id_of_user'] = $row['id'];
+		
         return true;
     }
 

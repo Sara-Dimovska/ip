@@ -3,7 +3,6 @@ include"connection.php";
 include"header.php";
 $oglasi = "";
 ?>
-
 <div class="container">
 
     <div class = "left">
@@ -152,21 +151,20 @@ $oglasi = "";
 
             <ul class="pagination">
                 <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
+                   <?php
+                   // echo '<a href="href = "index.php?strana='.($strana-1).'" aria-label="Previous">';
+                   // echo    '<span aria-hidden="true">&laquo;</span>';
+                   // echo '</a>';
+					?>
                 </li>
                 <?php
                 for($strana = 1;$strana <= $brojStrani;$strana++){
+					
                     echo ' <li><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
                 }
                 //mkdir("testing");
                 ?>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+                
             </ul>
 
         </div>
@@ -262,3 +260,4 @@ $oglasi = "";
 
 </footer>
 </html>
+

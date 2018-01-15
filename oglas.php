@@ -24,7 +24,7 @@ include"header.php";
 
 				$id = mysqli_real_escape_string($conn,$_GET["id"]);
 
-
+				$_SESSION['oglasID'] = $id;
 
 
 				$sql = mysqli_query($conn,"SELECT oglasID,naslov,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.email,korisnici.telefon
@@ -207,8 +207,16 @@ include"header.php";
 		<h4 style='margin-left:30px;'><strong>Објавен на:</strong></h4>
 		<div style="margin-left:30px; ">
 			<p ><?= $objavenNa; ?></p> 
-			<button type="button" class="btn btn-primary">Зачувај го огласот</button> 
-			<button type="button" style="margin-right:30px;" class="btn btn-danger">Пријави злоупотреба</button>	
+
+			<form action="zacuvajOglas.php" method="post">
+				
+				<input type="submit" class="btn btn-primary" value="Зачувај го огласот">
+			</form>
+		
+
+			<form action="prijaviZloupotreba.php" method="post">
+				<input type="submit" style="margin-top:30px;" class="btn btn-danger" value="Пријави злоупотреба">
+			</form>
 		</div>
 
 
