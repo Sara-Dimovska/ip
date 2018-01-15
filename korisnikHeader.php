@@ -40,7 +40,7 @@
 																			   display: inline-block;color: white !important ;
 																			   background-color: #dd6464 !important;
 																			   ">Уреди профил</a>
-				<a href="" class="btn btn-default  navbar-btn" style="float: right;
+				<a href="logout.php" class="btn btn-default  navbar-btn" style="float: right;
 																			   color: white !important ;
 																			   background-color: #840303 !important;margin-right:30px;
 																			   ">Одјави се</a>													

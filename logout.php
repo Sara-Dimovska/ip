@@ -6,6 +6,7 @@
  * Time: 4:49 PM
  */
 require_once("./include/korisnicka_strana.php");
+include "header.php";
 
 $fgmembersite->LogOut();
 ?>
@@ -19,9 +20,9 @@ $fgmembersite->LogOut();
 </head>
 <body>
 
-<h2>Одјавени сте</h2>
+<h2><center>Одјавени сте</center></h2>
 <p>
-    <a href='login.php'>Најави се повторно</a>
+    <a href='login.php'><center>Најави се повторно</center></a>
 </p>
 
 </body>
