@@ -1,6 +1,16 @@
 <?php
 include("connection.php");
-include"header.php";
+include"korisnikHeader.php";
+
+require_once("./include/korisnicka_strana.php");
+
+if(!$fgmembersite->CheckLogin())
+{
+	$fgmembersite->RedirectToURL("login.php");
+	exit;
+}
+
+
 if(isset($_POST['vnesiOglas'])){
 	
 	$kategorija = mysqli_real_escape_string($conn,$_POST['kategorija']);
@@ -45,11 +55,9 @@ if(isset($_POST['vnesiOglas'])){
 	$lokacija = mysqli_real_escape_string($conn,$_POST['lokacija']);
 	
 	$objaven_na = date("Y.m.d");
+	$korisnik =  $fgmembersite->User_id(); 
 	
 	
-	
-	$korisnik = 2; //ovoa e id na korisnik
-
 	// Vnesi vo bazata oglasi
 	$sql = "INSERT INTO `oglasi` ( `tip_objekt_id`, `kategorija_id`, `korisnik_id`, `naslov`, `opis`, `kvadratura`,`godina_izgradba`, `broj_sobi`, `enterier_id`, `tip_greenje_id`, `cena`, `tip_cena`, `lokacija`, `grad`, `objaven_na`)
 	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$godina_izgradba','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";

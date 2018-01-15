@@ -1,6 +1,7 @@
 <?php 
 include"connection.php";
 include"header.php";
+require_once("./include/korisnicka_strana.php");
 ?>
 
 <div class = "container">
@@ -9,6 +10,8 @@ include"header.php";
 
 		<?php
 		{
+			
+			
 			if(isset($_GET['id'])){
 
 				$naslov = "";
@@ -23,10 +26,13 @@ include"header.php";
 
 
 				$id = mysqli_real_escape_string($conn,$_GET["id"]);
-
+				
+				session_start();
 				$_SESSION['oglasID'] = $id;
+				
+				
 
-
+				
 				$sql = mysqli_query($conn,"SELECT oglasID,naslov,opis,broj_sobi,lokacija,grad,cena,tip_cena,kvadratura,objaven_na,godina_izgradba,enterier.ime_enterier,tip_greenje.ime_tip,tip_objekt.ime_objekt, korisnici.ime,korisnici.email,korisnici.telefon
 
 				FROM oglasi,enterier,tip_objekt,tip_greenje,korisnici
@@ -73,8 +79,10 @@ include"header.php";
 
 			}
 		}
+		
+		
 		?>
-
+		
 		<h2 style='margin-left:30px; margin-bottom:20px;'><?= $naslov ?></h2>
 		<div id='Holder'>
 			<div id='golemaSlika-Holder'>

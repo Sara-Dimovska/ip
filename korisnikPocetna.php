@@ -1,14 +1,18 @@
-<?php
-include"connection.php";
-include"header.php";
-$oglasi = "";
+<?php  
+
+	include"connection.php";
+	include "korisnikHeader.php";
+	
+	$oglasi = "";
+
 ?>
+
 <div class="container">
 
-	<div class = "left">
-		<?php
-		{
-			$zapisi_naStrana =12;
+    <div class = "left">
+        <?php
+        {
+            $zapisi_naStrana =12;
 
 
 			if(isset($_POST['filter'])){
@@ -96,7 +100,7 @@ $oglasi = "";
 					echo "</a>";
 				}
 			}
-			else if(isset($_POST['baraj_po_klucenZbor'])){
+            else if(isset($_POST['baraj_po_klucenZbor'])){
 				
 				$klucenZbor = mysqli_real_escape_string($conn,$_POST['klucenZbor']);
 				
@@ -191,113 +195,113 @@ $oglasi = "";
 				}
 			}
 		}
-		?>
-		<div class="text-center" >
+        ?>
+        <div class="text-center" >
 
-			<ul class="pagination">
-				<li>
-					<?php
-					// echo '<a href="href = "index.php?strana='.($strana-1).'" aria-label="Previous">';
-					// echo    '<span aria-hidden="true">&laquo;</span>';
-					// echo '</a>';
+            <ul class="pagination">
+                <li>
+                   <?php
+                   // echo '<a href="href = "index.php?strana='.($strana-1).'" aria-label="Previous">';
+                   // echo    '<span aria-hidden="true">&laquo;</span>';
+                   // echo '</a>';
 					?>
-				</li>
-				<?php
-				for($strana = 1;$strana <= $brojStrani;$strana++){
+                </li>
+                <?php
+                for($strana = 1;$strana <= $brojStrani;$strana++){
+					
+                    echo ' <li><a href = "korisnikPocetna.php?strana='.$strana.'">'.$strana.'</a></li>';
+                }
+                //mkdir("testing");
+                ?>
+                
+            </ul>
 
-					echo ' <li><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
-				}
-				//mkdir("testing");
-				?>
-
-			</ul>
-
-		</div>
-
-
+        </div>
 
 
-	</div>
-	<div class="right ">
-		<p class="text-primary text-center" style="font-size:20px;">Пребарување</p>
-
-		<form action="index.php" method="post">
-			<p class="text-muted" style="font-size:15px;margin:5px;"> Категорија:</p>
-
-			<select name="kategorija" class="selectpicker">
-				<option  selected disabled>Изберете категорија</option>
-				<?php
-				$result=mysqli_query($conn,"SELECT ime_kategorija FROM kategorija");
-				while($row = mysqli_fetch_array($result)){
-				?>
-				<option value="<?= $row['ime_kategorija'] ?>"><?= $row['ime_kategorija'] ?></option>
-				<?php
-				} //end while
-				?>
-			</select>
-			<p class="text-muted" style="font-size:15px;margin:5px;"> Тип на недвижнина:</p>
-			<select name="tip_objekti" name="kategorija" class="selectpicker">
-				<option  selected disabled>Изберете објект</option>
-				<?php
-				$result=mysqli_query($conn,"SELECT * FROM tip_objekt");
-				while($row = mysqli_fetch_array($result)){
-				?>
-				<option value="<?= $row['ime_objekt'] ?>"><?= $row['ime_objekt'] ?></option>
-				<?php
-				} //end while
-				?>
-			</select>
-			<p class="text-muted" style="font-size:15px;margin:5px;"> Ентериер:</p>
-			<select name="enterier" name="kategorija" class="selectpicker">
-				<option  selected disabled>Изберете ентериер</option>
-				<?php
-				$result=mysqli_query($conn,"SELECT * FROM enterier");
-				while($row = mysqli_fetch_array($result)){
-				?>
-				<option value="<?= $row['ime_enterier'] ?>"><?= $row['ime_enterier'] ?></option>
-				<?php
-				} //end while
-				?>
-			</select>
-			<p class="text-muted" style="font-size:15px;margin:5px;"> Град:</p>
-			<select name="grad" name="kategorija" class="selectpicker">
-				<option  selected disabled>Изберете град</option>
-				<?php
-				$result=mysqli_query($conn,"SELECT  DISTINCT grad FROM oglasi");
-				while($row = mysqli_fetch_array($result)){
-				?>
-				<option value="<?= $row['grad'] ?>"><?= $row['grad'] ?></option>
-				<?php
-				} //end while
-				?>
-			</select>
-			<p class="text-muted" style="font-size:15px;margin:5px;">Цена:</p>
-
-			<table>
-				<tr>
-					<td ><input type='text' size="4" placeholder="Од" name="cenaOd" class="form-control"></td>
-					<td ><input type='text' size="4" placeholder="До" name="cenaDo" class="form-control"></td>
-				</tr>
-			</table>
-
-			<p class="text-muted" style="font-size:15px;margin:5px;">Површина:</p>
-
-			<table>
-				<tr>
-					<td ><input type='text' size="4" placeholder="Од" name="povrshinaOd" class="form-control"></td>
-					<td ><input type='text' size="4" placeholder="До" name="povrshinaDo" class="form-control"></td>
-				</tr>
-			</table>
 
 
-			<p class="text-muted" style="font-size:15px;margin:5px;">Број на соби:</p>
-			<input type='text'plaseholder="Внесете број на соби" name="brSobi" class="form-control"><br>
+    </div>
+    <div class="right ">
+        <p class="text-primary text-center" style="font-size:20px;">Пребарување</p>
+
+        <form action="korisnikPocetna.php" method="post">
+            <p class="text-muted" style="font-size:15px;margin:5px;"> Категорија:</p>
+
+            <select name="kategorija" class="selectpicker">
+                <option  selected disabled>Изберете категорија</option>
+                <?php
+                $result=mysqli_query($conn,"SELECT ime_kategorija FROM kategorija");
+                while($row = mysqli_fetch_array($result)){
+                    ?>
+                    <option value="<?= $row['ime_kategorija'] ?>"><?= $row['ime_kategorija'] ?></option>
+                    <?php
+                } //end while
+                ?>
+            </select>
+            <p class="text-muted" style="font-size:15px;margin:5px;"> Тип на недвижнина:</p>
+            <select name="tip_objekti" name="kategorija" class="selectpicker">
+                <option  selected disabled>Изберете објект</option>
+                <?php
+                $result=mysqli_query($conn,"SELECT * FROM tip_objekt");
+                while($row = mysqli_fetch_array($result)){
+                    ?>
+                    <option value="<?= $row['ime_objekt'] ?>"><?= $row['ime_objekt'] ?></option>
+                    <?php
+                } //end while
+                ?>
+            </select>
+            <p class="text-muted" style="font-size:15px;margin:5px;"> Ентериер:</p>
+            <select name="enterier" name="kategorija" class="selectpicker">
+                <option  selected disabled>Изберете ентериер</option>
+                <?php
+                $result=mysqli_query($conn,"SELECT * FROM enterier");
+                while($row = mysqli_fetch_array($result)){
+                    ?>
+                    <option value="<?= $row['ime_enterier'] ?>"><?= $row['ime_enterier'] ?></option>
+                    <?php
+                } //end while
+                ?>
+            </select>
+            <p class="text-muted" style="font-size:15px;margin:5px;"> Град:</p>
+            <select name="grad" name="kategorija" class="selectpicker">
+                <option  selected disabled>Изберете град</option>
+                <?php
+                $result=mysqli_query($conn,"SELECT  DISTINCT grad FROM oglasi");
+                while($row = mysqli_fetch_array($result)){
+                    ?>
+                    <option value="<?= $row['grad'] ?>"><?= $row['grad'] ?></option>
+                    <?php
+                } //end while
+                ?>
+            </select>
+            <p class="text-muted" style="font-size:15px;margin:5px;">Цена:</p>
+
+            <table>
+                <tr>
+                    <td ><input type='text' size="4" placeholder="Од" name="cenaOd" class="form-control"></td>
+                    <td ><input type='text' size="4" placeholder="До" name="cenaDo" class="form-control"></td>
+                </tr>
+            </table>
+
+            <p class="text-muted" style="font-size:15px;margin:5px;">Површина:</p>
+
+            <table>
+                <tr>
+                    <td ><input type='text' size="4" placeholder="Од" name="povrshinaOd" class="form-control"></td>
+                    <td ><input type='text' size="4" placeholder="До" name="povrshinaDo" class="form-control"></td>
+                </tr>
+            </table>
 
 
-			<input type="submit" value="Барај" name="filter" class="btn btn-default btn-success">
+            <p class="text-muted" style="font-size:15px;margin:5px;">Број на соби:</p>
+            <input type='text'plaseholder="Внесете број на соби" name="brSobi" class="form-control"><br>
 
-		</form>
-	</div>
+
+            <input type="submit" value="Барај" name="filter" class="btn btn-default btn-success">
+
+        </form>
+    </div>
 </div>
 
 </body>

@@ -171,3 +171,9 @@ hr{
 	width:700px;
 	margin-left: 30px;
 }
+.urediProfil table {
+	margin: 30px auto;
+}
+.urediProfil td,tr{
+	padding: 5px;
+}
