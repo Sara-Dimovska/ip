@@ -26,7 +26,7 @@ if(!$fgmembersite->CheckLogin())
     <h2>Почетна страна</h2>
      <?php 
 			if ($fgmembersite->User_type() == "корисник")
-				$fgmembersite->RedirectToURL("korisnikPocetna.php");
+				$fgmembersite->RedirectToURL("index.php");
 	
 			else if($fgmembersite->User_type() == "модератор")
 				$fgmembersite->RedirectToURL("moderator.php");

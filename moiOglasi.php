@@ -54,7 +54,7 @@ if(!$fgmembersite->CheckLogin())
 			while ($row = mysqli_fetch_array($sql)){
 				echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
 				echo "<div class ='oglas'>";
-				echo "<img src='uploads/".$row['imeSlika']."' />";
+				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 				echo '<div class="oglas-text">';
 				echo $row['naslov'];
 				//if($row['cena'] == 0)

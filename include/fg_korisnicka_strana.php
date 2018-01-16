@@ -264,7 +264,7 @@ class FGMembersite
 
         if($user_rec['password'] != md5($pwd))
         {
-            $this->HandleError("Старата лозинка не се совшаѓа!");
+            $this->HandleError("Старата лозинка не се совпаѓа!");
             return false;
         }
         $newpwd = trim($_POST['newpwd']);
@@ -416,8 +416,9 @@ class FGMembersite
     function ChangePasswordInDB($user_rec, $newpwd)
     {
         $newpwd = $this->SanitizeForSQL($newpwd);
+		$user_id = $this->User_id();
 
-        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id=".$user_rec['id_user']."";
+        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id='$user_id' ";
 
         if(!mysqli_query($this->connection, $qry))
         {
