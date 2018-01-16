@@ -45,16 +45,20 @@ if(!$fgmembersite->CheckLogin())
 
 			echo '</strong></p>';
 			while ($row = mysqli_fetch_array($sql)){
-				echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+				echo "<a href='oglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
 				echo "<div class ='oglas'>";
-				echo "<img src='uploads/".$row['imeSlika']."' />";
+				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
+				
 				echo '<div class="oglas-text">';
 				echo $row['naslov'];
-				//if($row['cena'] == 0)
+				
 				switch($row['tip_cena']){
 					case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
 					case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
 				}
+				echo "<a href='izbrishiZacuvan.php?id=".$row['oglasID']. "'  >";
+				echo "<img src='assets/thrash.png' style='margin-left:10px;' title='Избриши од зачувани огласи' />";
+				echo "</a>";
 				echo "</div>";
 				echo "</div>";
 				echo "</a>";
