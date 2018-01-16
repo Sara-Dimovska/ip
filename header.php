@@ -1,3 +1,13 @@
+<?php
+require_once("./include/korisnicka_strana.php");
+
+
+if(!$fgmembersite->CheckLogin())
+{
+    $fgmembersite->RedirectToURL("login.php");
+    exit;
+}
+?>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -26,7 +36,11 @@
 
 						<input type="submit" name="baraj_po_klucenZbor" class="btn btn-primary navbar-btn" value="Пребарај">
 						
-						<a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>
+						<?php 
+							if($fgmembersite->User_type() != 'корисник')
+							echo '<a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>';
+						?>
+						
 					</form>		
 			</div>
 			<div style="width:100%;height:180px; background-color:whitesmoke; border-radius: 5px; margin-bottom:30px;">
