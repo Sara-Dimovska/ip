@@ -1,11 +1,13 @@
 <?php
 include"connection.php";
 require_once("./include/korisnicka_strana.php");
+/**
 if(!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login.php");
     exit;
-}
+} // nema potreba da proveruva tuka ovoa e pocetna strana
+ **/
 include"header.php";
 
 $oglasi = "";
@@ -312,4 +314,3 @@ $oglasi = "";
 
 </footer>
 </html>
-

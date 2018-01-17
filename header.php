@@ -2,11 +2,11 @@
 require_once("./include/korisnicka_strana.php");
 
 
-if(!$fgmembersite->CheckLogin())
+/** if(!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login.php");
     exit;
-}
+} */
 ?>
 <html lang="en">
 	<head>
@@ -36,10 +36,9 @@ if(!$fgmembersite->CheckLogin())
 
 						<input type="submit" name="baraj_po_klucenZbor" class="btn btn-primary navbar-btn" value="Пребарај">
 						
-						<?php 
-							if($fgmembersite->User_type() != 'корисник')
-							echo '<a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>';
-						?>
+
+                        <a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>
+
 						
 					</form>		
 			</div>
@@ -48,9 +47,7 @@ if(!$fgmembersite->CheckLogin())
 				<img src="assets/logo.png" style="float:left; margin:10px;">
 
 				<div class="nav-left">
-					<a href="index.php" class="btn btn-default  navbar-btn" style="
-																				   display: inline-block;
-																				   ">Сите огласи</a>
+					<a href="index.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Сите огласи</a>
 					<a href="vnesiOglas.php" class="btn btn-default  navbar-btn" style="
 																						display: inline-block;
 																						">Внеси оглас</a>
@@ -70,4 +67,4 @@ if(!$fgmembersite->CheckLogin())
 				
 				
 			</div><!-- /.container-fluid -->
-		
+

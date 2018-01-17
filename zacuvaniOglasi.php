@@ -78,7 +78,7 @@ if(!$fgmembersite->CheckLogin())
 					<?php
 					for($strana = 1;$strana <= $brojStrani;$strana++){
 
-						echo ' <li><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+						echo ' <li><a href = "login-home.php?strana='.$strana.'">'.$strana.'</a></li>';
 					}
 					//mkdir("testing");
 					?>
