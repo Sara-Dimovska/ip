@@ -1,5 +1,4 @@
 <?php
-
 include "najaveniHeader.php";
 include "connection.php";
 require_once("./include/korisnicka_strana.php");
@@ -15,25 +14,28 @@ if(!$fgmembersite->CheckLogin())
 	<head>
 	</head>
 	<body>
-		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
+		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px; padding: 40;">
 			<?php
 			$user_id =  $fgmembersite->User_id();
 
 
-			$oglas_id =  mysqli_real_escape_string($conn,$_GET["id"]);
+			$oglas_id = $_GET['id'];
 
 			
+			//echo $oglas_id." ".$user_id;
 			
-			$sql = "DELETE FROM zacuvani_oglasi
-			WHERE korisnicko_id = '$user_id' AND oglasID = '$oglas_id'";
+			
+			$sql = "UPDATE oglasi
+			SET odobren = '1',odobren_Od = '$user_id'
+			WHERE oglasID = '$oglas_id'";
 			
 			
 			$result = mysqli_query($conn,$sql);
 			
 			if($result){
-				echo"<h2> Вашиот оглас беше успешно избришан од зачувани огласи!</h2>";
-			}
-				
+				echo"<h2> Успешно го одобривте огласот!</h2>";
+			} 
+			
 			?>
 
 		</div>

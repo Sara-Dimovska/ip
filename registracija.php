@@ -5,7 +5,7 @@
  * Date: 06-Jan-18
  * Time: 9:06 PM
  */
-include "header.php";
+include "nenajaveniHeader.php";
 require_once("./include/korisnicka_strana.php");
 if(isset($_POST['submitted']))
 {

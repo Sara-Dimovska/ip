@@ -1,5 +1,5 @@
 <?php
-include "korisnikHeader.php";
+include "najaveniHeader.php";
 include "connection.php";
 require_once("./include/korisnicka_strana.php");
 
@@ -14,7 +14,8 @@ if(!$fgmembersite->CheckLogin())
 	<head>
 	</head>
 	<body>
-		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
+		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
+    padding-right: 40px;">
 			<?php
 			$user_id =  $fgmembersite->User_id();
 

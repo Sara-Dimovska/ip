@@ -5,9 +5,8 @@
  * Date: 08-Jan-18
  * Time: 4:47 PM
  */
-include "header.php";
+include "nenajaveniHeader.php";
 require_once("./include/korisnicka_strana.php");
-
 if(isset($_POST['submitted']))
 {
     if($fgmembersite->Login())
@@ -21,7 +20,7 @@ if(isset($_POST['submitted']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-    <title>Login</title>
+    <title>Најава</title>
     <link rel="STYLESHEET" type="text/css" href="style/fg_korisnicka_strana.css" />
     <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
 </head>

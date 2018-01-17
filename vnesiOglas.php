@@ -1,6 +1,6 @@
 <?php
 include("connection.php");
-include"korisnikHeader.php";
+include"najaveniHeader.php";
 
 require_once("./include/korisnicka_strana.php");
 

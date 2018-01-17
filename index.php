@@ -1,14 +1,7 @@
 <?php
 include"connection.php";
-require_once("./include/korisnicka_strana.php");
-/**
-if(!$fgmembersite->CheckLogin())
-{
-    $fgmembersite->RedirectToURL("login.php");
-    exit;
-} // nema potreba da proveruva tuka ovoa e pocetna strana
- **/
-include"header.php";
+
+include"nenajaveniHeader.php";
 
 $oglasi = "";
 ?>
@@ -44,7 +37,7 @@ $oglasi = "";
 				
 				$sql = "SELECT *
 						FROM oglasi INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID),kategorija,tip_objekt,enterier	
-						WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id";
+						WHERE oglasi.kategorija_id = kategorija.kategorija_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.enterier_id = enterier.enterier_id AND oglasi.odobren = '1' ";
 
 				$conditions = array();
 
@@ -67,7 +60,7 @@ $oglasi = "";
 				if(count($conditions) > 0){
 					$sql .= " AND ".implode(' AND ',$conditions);
 				}
-				$sql .= " GROUP BY sliki.oglasID";  // LIMIT " . $stranaOD.','.$zapisi_naStrana;
+				$sql .= " AND oglasi.odobren = '1' GROUP BY sliki.oglasID";  // LIMIT " . $stranaOD.','.$zapisi_naStrana;
 				
 				
 				$sendSQL =  mysqli_query($conn,$sql)or die("Error");
@@ -112,7 +105,7 @@ $oglasi = "";
 				$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi 
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				WHERE oglasi.naslov LIKE '%$klucenZbor%'
+				WHERE oglasi.naslov LIKE '%$klucenZbor%' AND oglasi.odobren = '1' 
 				GROUP BY sliki.oglasID
 				") or die("Error");
 				
@@ -134,7 +127,7 @@ $oglasi = "";
 				$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi 
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				WHERE oglasi.naslov LIKE '%$klucenZbor%'
+				WHERE oglasi.naslov LIKE '%$klucenZbor%' AND oglasi.odobren = '1'
 				GROUP BY sliki.oglasID
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				
@@ -158,7 +151,8 @@ $oglasi = "";
 				$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi 
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				GROUP BY sliki.oglasID
+				WHERE  oglasi.odobren = '1'
+				GROUP BY sliki.oglasID 
 				") or die("Error");
 				
 				$oglasi = mysqli_num_rows($sql);
@@ -178,6 +172,7 @@ $oglasi = "";
 				$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi 
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
+				WHERE  oglasi.odobren = '1'
 				GROUP BY sliki.oglasID
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				

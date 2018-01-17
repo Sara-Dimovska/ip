@@ -1,6 +1,6 @@
 <?php 
 include"connection.php";
-include"nenajaveniHeader.php";
+include"najaveniHeader.php";
 
 ?>
 
@@ -27,7 +27,7 @@ include"nenajaveniHeader.php";
 
 				$id = mysqli_real_escape_string($conn,$_GET["id"]);
 				
-				session_start();
+				//session_start();
 				$_SESSION['oglasID'] = $id;
 				
 				
