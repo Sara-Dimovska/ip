@@ -26,7 +26,7 @@ include "connection.php";
 				") or die("Error");
 
 			$oglasi = mysqli_num_rows($sql);
-			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';
+			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно зачувани огласи: ';
 			echo $oglasi;
 
 			$brojStrani = ceil($oglasi/$zapisi_naStrana);

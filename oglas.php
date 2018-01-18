@@ -216,15 +216,7 @@ include"nenajaveniHeader.php";
 		<div style="margin-left:30px; ">
 			<p ><?= $objavenNa; ?></p> 
 
-			<form action="zacuvajOglas.php" method="post">
-				
-				<input type="submit" class="btn btn-primary" value="Зачувај го огласот">
-			</form>
-		
-
-			<form action="prijaviZloupotreba.php" method="post">
-				<input type="submit" style="margin-top:30px;" class="btn btn-danger" value="Пријави злоупотреба">
-			</form>
+			
 		</div>
 
 

@@ -106,7 +106,7 @@ $oglasi = "";
 				$sendSQL =  mysqli_query($conn,$sql)or die("Error");		
 				
 				while ($row = mysqli_fetch_array($sendSQL)){
-					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "'>";
 					echo "<div class ='oglas'>";
 					echo "<img  id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 					echo '<div class="oglas-text">';
@@ -155,7 +155,7 @@ $oglasi = "";
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 				
 				while ($row = mysqli_fetch_array($sql)){
-					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "'>";
 					echo "<div class ='oglas'>";
 					echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 					echo '<div class="oglas-text">';
@@ -202,7 +202,7 @@ $oglasi = "";
 
 				
 				while ($row = mysqli_fetch_array($sql)){
-					echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+					echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "'>";
 					echo "<div class ='oglas'>";
 					echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 					echo '<div class="oglas-text">';

@@ -29,12 +29,12 @@ if(!$fgmembersite->CheckLogin())
 			$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				WHERE oglasi.korisnik_id = '$user_id'
+				WHERE oglasi.korisnik_id = '$user_id' AND odobren = '1'
 				GROUP BY sliki.oglasID
 				") or die("Error");
 
 			$oglasi = mysqli_num_rows($sql);
-			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';
+			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Мои објавени огласи: ';
 			echo $oglasi;
 
 			$brojStrani = ceil($oglasi/$zapisi_naStrana);

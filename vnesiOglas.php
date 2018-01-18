@@ -62,8 +62,9 @@ if(isset($_POST['vnesiOglas'])){
 	$sql = "INSERT INTO `oglasi` ( `tip_objekt_id`, `kategorija_id`, `korisnik_id`, `naslov`, `opis`, `kvadratura`,`godina_izgradba`, `broj_sobi`, `enterier_id`, `tip_greenje_id`, `cena`, `tip_cena`, `lokacija`, `grad`, `objaven_na`)
 	VALUES('$tip_objekt','$kategorija','$korisnik','$naslov','$opis','$kvadratura','$godina_izgradba','$brSobi','$enterier','$greenje','$cena','$tip_cena','$lokacija','$grad','$objaven_na')";
 	$result = mysqli_query($conn,$sql);
+	
 	if($result){
-		echo"okej";
+		echo '<script type="text/javascript">alert("Вашиот оглас се чека да биде одобрен!");</script>';
 	}
 		
 	
