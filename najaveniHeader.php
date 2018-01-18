@@ -2,7 +2,6 @@
 
 include "connection.php";
 require_once("./include/korisnicka_strana.php");
-
 if (!$fgmembersite->CheckLogin()) {
     //echo "prave problem tuka";
     $fgmembersite->RedirectToURL("login.php");
@@ -45,7 +44,7 @@ if (!$fgmembersite->CheckLogin()) {
             if ( ($fgmembersite->User_type() != 'админ') && ($fgmembersite->User_type() != 'модератор') && ($fgmembersite->User_type() != 'корисник'))
             { ?>
             <a href="login.php"  class="btn btn-primary  navbar-btn">Најави се</a>
-            
+
             <?php } else { ?>
             <a href="logout.php" class="btn btn-default  navbar-btn" style="color: white !important ;background-color: #840303 !important;">Одјави се</a>
             <?php }?>
@@ -57,7 +56,7 @@ if (!$fgmembersite->CheckLogin()) {
         <img src="assets/logo.png" style="float:left; margin:10px;">
 
         <div class="nav-left">
-            <?php if($fgmembersite->User_type() == 'корисник' || ($fgmembersite->User_type() == 'модератор')) {?>
+            <?php if( ($fgmembersite->User_type() == 'админ' ) || ($fgmembersite->User_type() == 'модератор') || ($fgmembersite->User_type() == 'корисник')) {?>
             <a href="login-home.php" class="btn btn-default  navbar-btn" style="display: inline-block;
 																			   ">Сите огласи</a>
             <?php }?>
@@ -72,26 +71,26 @@ if (!$fgmembersite->CheckLogin()) {
             <?php if($fgmembersite->User_type() == 'корисник') {?>
                 <a href="zacuvaniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Зачувани огласи</a>
             <?php }?>
-            
-            
-            
-            
-            
-            
-            
-            
-            <?php if($fgmembersite->User_type() == 'модератор') {?>
+
+
+            <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
                 <a href="oglasi_za_odobruvanje.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Огласи со барање за објава</a>
-                
-                
             <?php }?>
-            <?php if($fgmembersite->User_type() == 'модератор') {?>
-                <a href="moiOdobreniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Мои одобрени огласи</a>
-                
-                
+
+            <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
+                <a href="moiOdobreniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Одобрени огласи</a>
             <?php }?>
+            <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
+                <a href="" class="btn btn-default  navbar-btn" style="display: inline-block;">Бришење на оглас</a>
+            <?php }?>
+
             <?php if ((($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор')) && ($fgmembersite->User_type() != 'корисник')) { ?>
-                <a href="login-home.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Листа на корисници</a>
+               <?php if($fgmembersite->User_type() == 'админ') {?>
+                <a href="lista_admin.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Листа на корисници</a>
+                <?php }?>
+                <?php if ($fgmembersite->User_type() == 'модератор') {?>
+                    <a href="lista_moderator.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Листа на корисници</a>
+                <?php }?>
             <?php }?>
             <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') || ($fgmembersite->User_type() == 'корисник')) {?>
                 <a href="urediProfil.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Уреди мој профил</a>
