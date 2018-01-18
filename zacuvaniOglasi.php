@@ -40,7 +40,7 @@ include "connection.php";
 
 			echo '</strong></p>';
 			while ($row = mysqli_fetch_array($sql)){
-				echo "<a href='oglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
+				echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
 				echo "<div class ='oglas'>";
 				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 				

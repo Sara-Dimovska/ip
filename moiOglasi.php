@@ -17,8 +17,11 @@ if(!$fgmembersite->CheckLogin())
 	</head>
 	<body>
 		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
-    padding-right: 40px;">
+									  padding-right: 40px;">
 			<?php
+
+	
+			
 			$user_id =  $fgmembersite->User_id();
 
 			//echo $user_id;
@@ -48,7 +51,7 @@ if(!$fgmembersite->CheckLogin())
 
 			echo '</strong></p>';
 			while ($row = mysqli_fetch_array($sql)){
-				echo "<a href='oglas.php?id=".$row['oglasID']. "'>";
+				echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;'  >";
 				echo "<div class ='oglas'>";
 				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
 				echo '<div class="oglas-text">';
@@ -58,9 +61,17 @@ if(!$fgmembersite->CheckLogin())
 					case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
 					case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
 				}
-				echo "</div>";
-				echo "</div>";
 				echo "</a>";
+				echo "<br>";
+			?>
+
+			<input type='image' src='assets/thrash.png'  onClick='izbrishiMojOglas(<?= $row["oglasID"];?>)'/>
+			<?php
+				//echo "</a>";
+
+				echo "</div>";
+				echo "</div>";
+				
 			}
 			?>
 
@@ -77,7 +88,7 @@ if(!$fgmembersite->CheckLogin())
 					<?php
 					for($strana = 1;$strana <= $brojStrani;$strana++){
 
-						echo ' <li><a href = "login-home.php?strana='.$strana.'">'.$strana.'</a></li>';
+						echo ' <li><a href = "moiOglasi.php?strana='.$strana.'">'.$strana.'</a></li>';
 					}
 					//mkdir("testing");
 					?>
@@ -87,7 +98,15 @@ if(!$fgmembersite->CheckLogin())
 			</div>
 
 		</div>
+		<script language='javascript'>
+			function izbrishiMojOglas(oglasID){
+				if(confirm("Дали сте сигурни дека сакате да го избришете вашиот оглас?")){
+					window.location.href='izbrishiMojOglas.php?izbrishiMojOglas_id='+oglasID+'';
+					return true;
+				}
+			}
 
+		</script>
 
 	</body>
 </html>

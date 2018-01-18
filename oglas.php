@@ -216,7 +216,9 @@ include"nenajaveniHeader.php";
 		<div style="margin-left:30px; ">
 			<p ><?= $objavenNa; ?></p> 
 
-			
+			<form action="prijaviZloupotreba.php" method="post">
+				<input type="submit" style="margin-top:10px;" class="btn btn-danger" value="Пријави злоупотреба">
+			</form>
 		</div>
 
 
