@@ -19,23 +19,49 @@ if(!$fgmembersite->CheckLogin())
 			$user_id =  $fgmembersite->User_id();
 
 
-			$oglas_id = $_GET['id'];
+			
+
+
+			//echo $oglas_id." ".$user_id;
+
+			if(isset($_GET['id'])){
+				
+				$oglas_id = $_GET['id'];
+				
+				$sql = "UPDATE oglasi
+				SET odobren = '1',odobren_Od = '$user_id'
+				WHERE oglasID = '$oglas_id'";
+
+
+				$result = mysqli_query($conn,$sql);
+
+				if($result){
+					echo"<h2> Успешно го одобривте огласот!</h2>";
+				} 
+				
+				header( "refresh:2;url=oglasi_za_odobruvanje.php" );
+			}
+
+			if(isset($_GET['oglas_id'])){
+				
+				$oglas_id = $_GET['oglas_id'];
+				
+				$sql = "DELETE FROM oglasi
+				WHERE oglasi.oglasID = '$oglas_id'";
+
+
+				$result = mysqli_query($conn,$sql);
+
+				if($result){
+					echo"<h2> Успешно го избришавте огласот!</h2>";
+				} 
+				
+				header( "refresh:2;url=oglasi_za_odobruvanje.php" );
+			}
 
 			
-			//echo $oglas_id." ".$user_id;
-			
-			
-			$sql = "UPDATE oglasi
-			SET odobren = '1',odobren_Od = '$user_id'
-			WHERE oglasID = '$oglas_id'";
-			
-			
-			$result = mysqli_query($conn,$sql);
-			
-			if($result){
-				echo"<h2> Успешно го одобривте огласот!</h2>";
-			} 
-			
+
+
 			?>
 
 		</div>

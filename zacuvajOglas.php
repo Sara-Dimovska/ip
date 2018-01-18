@@ -35,6 +35,8 @@ if(!$fgmembersite->CheckLogin())
 				echo"<h2>Вашиот оглас беше успешно зачуван!</h2>";
 			}
 
+			header( "refresh:2;url=zacuvaniOglasi.php" );
+			
 			?>
 
 		</div>

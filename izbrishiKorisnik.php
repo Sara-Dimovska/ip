@@ -17,28 +17,23 @@ if(!$fgmembersite->CheckLogin())
 	<body>
 		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
 			<?php
-			$user_id =  $fgmembersite->User_id();
-
-
-			$oglas_id =  mysqli_real_escape_string($conn,$_GET["id"]);
-
 			
+
+
+			$korisnik_id =  mysqli_real_escape_string($conn,$_GET["id"]);
+
+			//echo $korisnik_id;
 			
-			$sql = "DELETE FROM zacuvani_oglasi
-			WHERE korisnicko_id = '$user_id' AND oglasID = '$oglas_id'";
+			$sql = "DELETE FROM korisnici
+			WHERE id = '$korisnik_id'";
 			
 			
 			$result = mysqli_query($conn,$sql);
 			
-			if($result){
-				echo"<h2> Вашиот оглас беше успешно избришан од зачувани огласи!</h2>";
-			}
+			header( "refresh:1;url=lista_moderator.php" );
 				
-			header( "refresh:2;url=zacuvaniOglasi.php" );
-			
 			?>
-	
-	
+
 		</div>
 
 	</body>

@@ -80,9 +80,7 @@ if (!$fgmembersite->CheckLogin()) {
             <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
                 <a href="moiOdobreniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Одобрени огласи</a>
             <?php }?>
-            <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
-                <a href="" class="btn btn-default  navbar-btn" style="display: inline-block;">Бришење на оглас</a>
-            <?php }?>
+           
 
             <?php if ((($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор')) && ($fgmembersite->User_type() != 'корисник')) { ?>
                <?php if($fgmembersite->User_type() == 'админ') {?>

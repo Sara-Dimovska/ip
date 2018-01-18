@@ -8,7 +8,7 @@ include "najaveniHeader.php";
 	</head>
 	<body>
 		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;    padding-left: 40px;
-    padding-right: 40px;">
+									  padding-right: 40px;">
 			<?php
 			$user_id =  $fgmembersite->User_id();
 
@@ -42,17 +42,28 @@ include "najaveniHeader.php";
 				echo "<a href='oglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
 				echo "<div class ='oglas'>";
 				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
-				
+
 				echo '<div class="oglas-text">';
 				echo $row['naslov'];
-				
+
 				switch($row['tip_cena']){
 					case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
 					case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
 				}
+
 				echo "<a href='odobriOglas.php?id=".$row['oglasID']. "'  >";
 				echo "<img src='assets/check.png' style='margin-left:10px;' title='Одобри оглас' />";
 				echo "</a>";
+
+				echo "<br>";
+
+				//echo "<a href='odobriOglas.php?erase_id=".$row['oglasID']. "'  >";
+			?>
+
+			<input type='image' src='assets/thrash.png' style='margin-left:10px;' onClick='izbrishi_oglas(<?= $row["oglasID"];?>)'/>
+			<?php
+				//echo "</a>";
+
 				echo "</div>";
 				echo "</div>";
 				echo "</a>";
@@ -82,7 +93,15 @@ include "najaveniHeader.php";
 			</div>
 
 		</div>
+		<script language='javascript'>
+			function izbrishi_oglas(oglasID){
+				if(confirm("Дали сте сигурни дека сакате да го избришете огласов?")){
+					window.location.href='odobriOglas.php?oglas_id='+oglasID+'';
+					return true;
+				}
+			}
 
+		</script>
 
 	</body>
 </html>
