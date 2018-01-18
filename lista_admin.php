@@ -18,7 +18,7 @@ include "connection.php";
 
     <table border="1"   width="800px" cellspacing="7" >
         <tr  style="color: #dd6464;">
-            <th>ИД</th>  <th>ИМЕ</th>   <th>Е-ПОШТА</th>  <th>КОРИСНИЧКО ИМЕ</th> <th>ИЗБРИШИ</th>
+            <th>ИД</th>  <th>ИМЕ</th>   <th>Е-ПОШТА</th>  <th>КОРИСНИЧКО ИМЕ</th> <th> ТИП КОРИСНИК </th> <th>ИЗБРИШИ</th>
         </tr>
 
         <?php
@@ -46,14 +46,14 @@ include "connection.php";
 
 
 
-        $result = mysqli_query($conn,"SELECT id, ime, email, username FROM korisnici WHERE (tip_korisnik='корисник' OR tip_korisnik='модератор' )LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
+        $result = mysqli_query($conn,"SELECT id, ime, email, username, tip_korisnik FROM korisnici WHERE (tip_korisnik='корисник' OR tip_korisnik='модератор' )LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 
 
         if ($result->num_rows > 0) {
             // output data of each row
 
             while($row = $result->fetch_assoc()) {
-                echo "<tr ><td>".$row["id"] ."</td><td>".$row["ime"]."</td><td>".$row["email"]."</td><td>".$row["username"] ."</td>";
+                echo "<tr ><td>".$row["id"] ."</td><td>".$row["ime"]."</td><td>".$row["email"]."</td><td>".$row["username"] ."</td><td>".$row["tip_korisnik"] ."</td>";
 
                 ?>
 
