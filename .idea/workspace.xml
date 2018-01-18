@@ -16,15 +16,15 @@
       <file leaf-file-name="vnesiModerator.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vnesiModerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="32" column="81" lean-forward="false" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+            <state relative-caret-position="56">
+              <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1516316032525" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
+                <marker date="1516316553936" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
               </folding>
             </state>
           </provider>
@@ -190,12 +190,12 @@
       <workItem from="1516050264646" duration="1820000" />
       <workItem from="1516210677626" duration="7646000" />
       <workItem from="1516290397662" duration="1205000" />
-      <workItem from="1516309242976" duration="4496000" />
+      <workItem from="1516309242976" duration="4963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49783000" />
+    <option name="totallyTimeSpent" value="50250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -592,15 +592,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vnesiModerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="32" column="81" lean-forward="false" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        <state relative-caret-position="56">
+          <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1516316032525" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
+            <marker date="1516316553936" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
           </folding>
         </state>
       </provider>

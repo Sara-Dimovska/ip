@@ -70,7 +70,7 @@ if(isset($_POST['vnesiModerator'])) {
 
                 <tr>
                     <td  style="font-size:15px;margin:5px;">Email:</td>
-                    <td><input required type='text' name="email" class="form-control"></td>
+                    <td><input required type='email' name="email" class="form-control"></td>
                 </tr>
 
 
