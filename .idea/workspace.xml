@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/vnesiModerator.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lista_admin.php" afterPath="$PROJECT_DIR$/lista_admin.php" />
-      <change beforePath="$PROJECT_DIR$/najaveniHeader.php" afterPath="$PROJECT_DIR$/najaveniHeader.php" />
+      <change beforePath="$PROJECT_DIR$/vnesiModerator.php" afterPath="$PROJECT_DIR$/vnesiModerator.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +16,39 @@
       <file leaf-file-name="vnesiModerator.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vnesiModerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="294">
+              <caret line="32" column="81" lean-forward="false" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516316032525" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vnesiOglas.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1207">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <marker date="1516304409119" expanded="true" signature="1847:2255" ph="INSERT INTO `oglasi`... " />
+                <marker date="1516304409119" expanded="true" signature="2958:3012" ph="INSERT INTO sliki... " />
+                <marker date="1516304409119" expanded="true" signature="3201:3266" ph="UPDATE sliki... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="najaveniHeader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/najaveniHeader.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="40" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="27" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -66,6 +94,7 @@
         <option value="$PROJECT_DIR$/lista_moderator.php" />
         <option value="$PROJECT_DIR$/lista_admin.php" />
         <option value="$PROJECT_DIR$/najaveniHeader.php" />
+        <option value="$PROJECT_DIR$/vnesiModerator.php" />
       </list>
     </option>
   </component>
@@ -76,7 +105,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -104,6 +133,11 @@
             <path>
               <item name="ip" type="b2602c69:ProjectViewProjectNode" />
               <item name="ip" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ip" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ip" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="include" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -156,15 +190,15 @@
       <workItem from="1516050264646" duration="1820000" />
       <workItem from="1516210677626" duration="7646000" />
       <workItem from="1516290397662" duration="1205000" />
-      <workItem from="1516309242976" duration="1409000" />
+      <workItem from="1516309242976" duration="4496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46696000" />
+    <option name="totallyTimeSpent" value="49783000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -351,31 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/fg_korisnicka_strana.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="146" column="9" lean-forward="true" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
-          <folding>
-            <marker date="1516133716145" expanded="true" signature="7989:8089" ph="Select * fro... ${$this-&gt;tablename}" />
-            <marker date="1516133716145" expanded="true" signature="8997:9069" ph="Select ime, ${$this-&gt;tablename}" />
-            <marker date="1516133716145" expanded="true" signature="9379:9456" ph="Update ${$this-&gt;tablename}... " />
-            <marker date="1516133716145" expanded="true" signature="10090:10166" ph="Update ${$this-&gt;tablename}... " />
-            <marker date="1516133716145" expanded="true" signature="10167:10168" ph="Update ${$this-&gt;tablename}... " />
-            <marker date="1516133716145" expanded="true" signature="10672:10723" ph="Select * fro... ${$this-&gt;tablename}" />
-            <marker date="1516133716145" expanded="true" signature="19099:19170" ph="select usern... ${$this-&gt;tablename}" />
-            <marker date="1516133716145" expanded="true" signature="21270:21806" ph="insert into ${$this-&gt;tablename}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/korisnicka_strana.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/header.php" />
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -401,13 +410,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/korisnikHeader.php" />
-    <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zacuvaniOglasi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
@@ -513,14 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/najaveniHeader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="84" column="127" lean-forward="false" selection-start-line="84" selection-start-column="127" selection-end-line="84" selection-end-column="127" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login-home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-748">
@@ -551,11 +545,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/fg_korisnicka_strana.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="857" column="9" lean-forward="true" selection-start-line="857" selection-start-column="9" selection-end-line="857" selection-end-column="9" />
+          <folding>
+            <marker date="1516133716145" expanded="true" signature="7989:8089" ph="Select * fro... ${$this-&gt;tablename}" />
+            <marker date="1516133716145" expanded="true" signature="8997:9069" ph="Select ime, ${$this-&gt;tablename}" />
+            <marker date="1516133716145" expanded="true" signature="9379:9456" ph="Update ${$this-&gt;tablename}... " />
+            <marker date="1516133716145" expanded="true" signature="10090:10166" ph="Update ${$this-&gt;tablename}... " />
+            <marker date="1516133716145" expanded="true" signature="10167:10168" ph="Update ${$this-&gt;tablename}... " />
+            <marker date="1516133716145" expanded="true" signature="10672:10723" ph="Select * fro... ${$this-&gt;tablename}" />
+            <marker date="1516133716145" expanded="true" signature="19099:19170" ph="select usern... ${$this-&gt;tablename}" />
+            <marker date="1516133716145" expanded="true" signature="21270:21806" ph="insert into ${$this-&gt;tablename}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/korisnicka_strana.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/najaveniHeader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <marker date="1516304409119" expanded="true" signature="1847:2255" ph="INSERT INTO `oglasi`... " />
+            <marker date="1516304409119" expanded="true" signature="2958:3012" ph="INSERT INTO sliki... " />
+            <marker date="1516304409119" expanded="true" signature="3201:3266" ph="UPDATE sliki... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vnesiModerator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="294">
+          <caret line="32" column="81" lean-forward="false" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#form#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516316032525" expanded="true" signature="802:988" ph="INSERT INTO `korisnici`... " />
+          </folding>
         </state>
       </provider>
     </entry>
