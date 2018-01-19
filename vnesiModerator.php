@@ -5,8 +5,8 @@
  * Date: 18-Jan-18
  * Time: 10:23 PM
  */
-include("connection.php");
-include"najaveniHeader.php";
+include "connection.php";
+include "najaveniHeader.php";
 require_once("./include/korisnicka_strana.php");
 
 if(!$fgmembersite->CheckLogin())
@@ -27,16 +27,27 @@ if(isset($_POST['vnesiModerator'])) {
 
     $korisnik = $fgmembersite->User_id();
 
-
-// Vnesi vo bazata oglasi
-    $sql = "INSERT INTO korisnici ( ime, email, telefon, confirmcode, username, password,tip_korisnik)
+    $proverka = mysqli_query($conn, "SELECT tip_korisnik,username FROM korisnici");
+// proverka dali veke postoe toa korisnicko ime za moderator
+    if ($proverka->num_rows > 0)
+        while ($row = $proverka->fetch_assoc()) {
+            if ($username == $row['username'])
+            {
+                echo '<script type="text/javascript">alert("Ова име на модератор веќе постои!");</script>';
+            }
+            else
+            {
+                //Vnesi vo bazata na korisnici pdatocite za moderator
+                $sql = "INSERT INTO korisnici ( ime, email, telefon, confirmcode, username, password,tip_korisnik)
 	VALUES('$ime','$email','$telefon','$confirmcode','$username',md5('$password'),'$tip_korisnik')";
-    $result = mysqli_query($conn, $sql);
 
-    if ($result) {
-        echo '<script type="text/javascript">alert("Модераторот е успешно внесен!");</script>';
+            }
+        }
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            echo '<script type="text/javascript">alert("Модераторот е успешно внесен!");</script>';
+        }
     }
-}
 
 
 ?>
