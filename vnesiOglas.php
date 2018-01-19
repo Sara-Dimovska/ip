@@ -128,16 +128,40 @@ if(isset($_POST['vnesiOglas'])){
 					<td>
 						<select  required name="grad" class="form-control">
 							<option value=""selected disabled></option>
-							<option value="Скопје">Скопје</option>
-							<option value="Штип">Штип</option>
-							<option value="Битола">Битола</option>
-							<option value="Прилеп">Прилеп</option>
-							<option value="Охрид">Охрид</option>
-							<option value="Струмица">Струмица</option>
-							<option value="Свети Николе">Свети Николе</option>
-							<option value="Кочани">Кочани</option>
-							<option value="Берово">Берово</option>
-
+                            <option value="Берово">Берово</option>
+                            <option value="Битола">Битола</option>
+                            <option value="Богданци">Богданци</option>
+                            <option value="Валандово">Валандово</option>
+                            <option value="Велес">Велес</option>
+                            <option value="Виница">Виница</option>
+                            <option value="Гевгелија">Гевгелија</option>
+                            <option value="Гостивар">Гостивар</option>
+                            <option value="Дебар">Дебар</option>
+                            <option value="Делчево">Делчево</option>
+                            <option value="Демир Капија">Демир Капија</option>
+                            <option value="Демир Хисар">Демир Хисар</option>
+                            <option value="Кавадарци">Кавадарци</option>
+                            <option value="Кичево">Кичево</option>
+                            <option value="Кочани">Кочани</option>
+                            <option value="Кратово">Кратово</option>
+                            <option value="Крива Паланка">Крива Паланка</option>
+                            <option value="Крушево">Крушево</option>
+                            <option value="Куманово">Куманово</option>
+                            <option value="Македонски Брод">Македонски Брод</option>
+                            <option value="Македонска Каменица">Македонска Каменица</option>
+                            <option value="Неготино">Неготино</option>
+                            <option value="Охрид">Охрид</option>
+                            <option value="Пехчево">Пехчево</option>
+                            <option value="Прилеп">Прилеп</option>
+                            <option value="Пробиштип">Пробиштип</option>
+                            <option value="Радовиш">Радовиш</option>
+                            <option value="Ресен">Ресен</option>
+                            <option value="Свети Николе">Свети Николе</option>
+                            <option value="Скопје">Скопје</option>
+                            <option value="Струга">Струга</option>
+                            <option value="Струмица">Струмица</option>
+                            <option value="Тетово">Тетово</option>
+                            <option value="Штип">Штип</option>
 						</select>
 					</td>
 

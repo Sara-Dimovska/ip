@@ -43,11 +43,11 @@
 					
 					<a href="vnesiOglas.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Внеси оглас</a>
 					
-					<a href="#" class="btn btn-default  navbar-btn" style="
+					<a href="pomos.php" class="btn btn-default  navbar-btn" style="
 																		   display: inline-block;
 																		   ">Помош</a>
 
-					<a href="#" class="btn btn-default  navbar-btn" style="
+					<a href="za_nas.php" class="btn btn-default  navbar-btn" style="
 																		   display: inline-block;
 																		   ">За нас</a>	
 					<a href="registracija.php" class="btn btn-default  navbar-btn" style="

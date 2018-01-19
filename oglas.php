@@ -3,7 +3,8 @@ include"connection.php";
 include"nenajaveniHeader.php";
 
 ?>
-
+<html>
+<body>
 <div class = "container">
 	<div class = "left">		
 
