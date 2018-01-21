@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ivana
- * Date: 20-Jan-18
- * Time: 12:17 AM
- */
+/*** Created by PhpStorm.* Date: 20-Jan-18 **/
+
 include "nenajaveniHeader.php";
 
 ?>
