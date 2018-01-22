@@ -150,8 +150,8 @@ include"nenajaveniHeader.php";
 				<td style="color:blue;">
 					<?=$mail; ?>
 				</td>
-				<td>
-					<button type="button" class="btn btn-primary">Испрати порака</button> 
+				<td>			
+					<a href="mailto:<?=$mail?>" class="btn btn-primary" >Испрати порака</a> 				 
 				</td>
 			</tr>
 
@@ -217,9 +217,9 @@ include"nenajaveniHeader.php";
 		<div style="margin-left:30px; ">
 			<p ><?= $objavenNa; ?></p> 
 
-			<form action="prijaviZloupotreba.php" method="post">
-				<input type="submit" style="margin-top:10px;" class="btn btn-danger" value="Пријави злоупотреба">
-			</form>
+			
+				<input type="submit" data-toggle="modal" data-target="#ispratiPoraka" style="margin-top:10px;" class="btn btn-danger" value="Пријави злоупотреба" >
+
 		</div>
 
 
@@ -229,7 +229,49 @@ include"nenajaveniHeader.php";
 
 
 	</div>
+	
+	
+	<!-- Modal -->
+  <div class="modal fade" id="ispratiPoraka" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Пријави злоупотреба</h4>
+        </div>
+        
+        <div class="modal-body">
+        
+         <form action="prijaviZloupotreba.php" method="post">
+         	<table style='margin:0 auto'>
+          	
+          	<tr><td style = 'padding:10px;'>Наслов: </td>
+          	<td style = 'padding:10px;'><input required type='text' name="mail_naslov" class="form-control"></td>
+          	</tr>
+          	<tr><td style = 'padding:10px;'>Порака:</td><td style = 'padding:10px;'>
+          						<div class="form-group">
+							<textarea required class="form-control" name = 'mail_poraka' id="exampleFormControlTextarea1" rows="5"></textarea>
+						</div>
+          	</td></tr>
+          </table>
+          
+          <div class="modal-footer">
+          <input type="submit" class="btn btn-success"  name="isprati_poraka" value="Испрати">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+        </div>
+          <input type="hidden" name="oglas_id" value="<?=$id; ?>">  
+         </form>
+          
+        </div>
+        
+        
+      </div>
+        
+	  </div>
 </div>
+	  
 <script type="text/javascript">
 	window.addEventListener('load',imgFunc,false);
 	function imgFunc(){

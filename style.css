@@ -178,3 +178,17 @@ hr{
 .urediProfil td,tr{
 	padding: 10px;
 }
+.zaNas{
+	background-color: whitesmoke;
+	padding-left: 10px;
+	width: 900px;
+	overflow: hidden;
+	display: inline-block;		 
+	margin:  auto;
+}
+#person{
+	height: 700px;
+	width: 300px;
+	margin: 30px;
+	padding: 20px;
+}

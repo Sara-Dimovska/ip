@@ -109,7 +109,7 @@ if(isset($_POST['submitted']))
 					<td>
 						<input type="text" name="telefon" placeholder="<?php
 																	   
-																	   if($row['telefon'] == "NULL")
+																	   if($row['telefon'] == "")
 																	   echo "немате внесено телефон";
 																	   
 																	   else
