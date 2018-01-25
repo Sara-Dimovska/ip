@@ -5,7 +5,7 @@
  * Date: 08-Jan-18
  * Time: 4:52 PM
  */
-include "header.php";
+include "nenajaveniHeader.php";
 require_once("./include/korisnicka_strana.php");
 
 $emailsent = false;
