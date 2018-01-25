@@ -14,9 +14,7 @@ include "nenajaveniHeader.php";
 </head>
 <body>
 
-<h3>Сакате да пронајдете оглас?</h3>
-<h4> Доколку сте најавени да барате специфичен оглас може да го пребарате со внесување на клучен збор и избирање на копчето пребарај. </h4>
-<!--  на оваа страна ќе се внесат инструкции како се користе сајтот  -->
+
 
 
 
@@ -25,4 +23,11 @@ include "nenajaveniHeader.php";
 
 
 </body>
+<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>

@@ -232,7 +232,7 @@ $oglasi = "";
 				<?php
 				for($strana = 1;$strana <= $brojStrani;$strana++){
 
-					echo ' <li><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+					echo ' <li><a href = "login-home.php?strana='.$strana.'">'.$strana.'</a></li>';
 				}
 				//mkdir("testing");
 				?>
@@ -327,8 +327,11 @@ $oglasi = "";
 	</div>
 </div>
 
-</body>
 <footer class="panel-footer">
-
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
 </footer>
 </html>

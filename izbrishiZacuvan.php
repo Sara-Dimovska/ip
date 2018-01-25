@@ -42,4 +42,11 @@ if(!$fgmembersite->CheckLogin())
 		</div>
 
 	</body>
+	<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>
