@@ -23,7 +23,7 @@ include "connection.php";
 				<?php
 
 				$korisnici = "";
-				$zapisi_naStrana =20;
+				$zapisi_naStrana =200;
 
 				$sql = "SELECT id, ime, email, username FROM korisnici WHERE tip_korisnik='корисник'";
 
@@ -87,7 +87,7 @@ include "connection.php";
 					<?php
 					for($strana = 1;$strana <= $brojStrani;$strana++){
 
-						echo ' <li><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+						echo ' <li><a href = "lista_moderator.php?strana='.$strana.'">'.$strana.'</a></li>';
 					}
 					//mkdir("testing");
 					?>
@@ -108,6 +108,13 @@ include "connection.php";
 		</script>
 
 	</body>
+	<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>
 
 

@@ -5,7 +5,7 @@
  * Date: 08-Jan-18
  * Time: 4:52 PM
  */
-include "header.php";
+include "nenajaveniHeader.php";
 require_once("./include/korisnicka_strana.php");
 
 $emailsent = false;
@@ -75,4 +75,11 @@ Form Code End (see html-form-guide.com for more info.)
 -->
 
 	</body>
+	<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>

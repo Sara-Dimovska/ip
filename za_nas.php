@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-<?php
-/*** Created by PhpStorm.* Date: 20-Jan-18 **/
-
-include "nenajaveniHeader.php";
-
-?>
-
-<html  xml:lang="en-US" lang="en-US">
-<head>
-</head>
-<body>
-
-<!-- на оваа страна ќе внесеме за нас информациите -->
-
-
-
-
-
-
-</body>
-</html>
-=======
 <?php include "nenajaveniHeader.php"; ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 	<head>
@@ -34,7 +11,7 @@ include "nenajaveniHeader.php";
 			<h3 style='color:#dd6464;    font-size: 35px;
     margin-left: 300px;'>Тимот на &quot;Смести се&quot;</h3>		
 
-			<div style="display: inline-flex;">
+			<div style="display: inline-flex; margin-bottom:50px;">
 				<div id='person'>
 					<img src="assets/sara.png" style="height:250px;width:250px;"> 
 					<p ><center style="font-size:20px;color:#dd6464;">Сара Костовска</center></p>
@@ -50,17 +27,23 @@ include "nenajaveniHeader.php";
 					</center>
 				</div>
 				<div id='person'>
-					
+					<img src="assets/ivana.png" style="height:250px;width:250px;">
 					<p ><center style="font-size:20px;color:#dd6464;">Ивана Цебова</center></p>
 					<center style="font-style: italic; font-size:18px;">
-						одговорен менаџер на овој проект и помага на целиот тим кога им е потребна помош. Како full stack developer се грижи за имплементација на безбедни и коректни функционалности, придонесува во менаџирањето на базата на податоци и кодира во php. Таа е одличен иднивидуален програмер, но уште подобра како тимски играч. Нејзината програмерска страст континуиарно е поттикната од желбата за учење и имплементација на нови идеи секогаш кога е можно.
+						одговорен менаџер и full stack developer се грижи за имплементација на безбедни и коректни функционалности, придонесува во менаџирањето на базата на податоци и кодира во php.Таа е одличен иднивидуален програмер, но уште подобра во тим. Нејзината програмерска страст континуиарно е поттикната од желбата за учење и имплементација на нови идеи.
 					</center>
 				</div>
 				
 			</div>			  					  
-
+	
 		</div>
 
 	</body>
+	<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>
->>>>>>> 990efdca1c40dc8bd9e23179e61a7da60b4702f4

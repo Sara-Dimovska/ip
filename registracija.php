@@ -73,7 +73,7 @@ if(isset($_POST['submitted']))
 
         </fieldset>
     </form>
-	</div>
+	</div></div>
     <!-- client-side Form Validations:
     Uses the excellent form validation script from JavaScript-coder.com-->
 
@@ -100,4 +100,11 @@ if(isset($_POST['submitted']))
 
 
 </body>
+<footer class="panel-footer">
+	<center>		
+		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+	</center>
+	
+</footer>
 </html>

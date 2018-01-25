@@ -425,6 +425,7 @@ class FGMembersite
             $this->HandleDBError("Грешка при промена на лозинка\nquery:$qry");
             return false;
         }
+		
         return true;
     }
 
@@ -550,13 +551,13 @@ class FGMembersite
 
         $mailer->CharSet = 'utf-8';
 
-        $mailer->AddAddress($email,$user_rec['name']);
+        $mailer->AddAddress($email,$user_rec['ime']);
 
         $mailer->Subject = "Вашата нова лозинка за ".$this->sitename;
 
         $mailer->From = $this->GetFromAddress();
 
-        $mailer->Body ="Здраво ".$user_rec['name']."\r\n\r\n".
+        $mailer->Body ="Здраво ".$user_rec['ime']."\r\n\r\n".
             "Вашата лозинка е ресетирана успешно. ".
             "Ова е вашата ажурирана најава :\r\n".
             "корисничко име :".$user_rec['username']."\r\n".
