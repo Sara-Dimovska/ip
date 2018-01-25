@@ -1,5 +1,5 @@
 <?php 
-include"header.php";
+include"nenajaveniHeader.php";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -12,7 +12,7 @@ include"header.php";
 		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;">
 			<div id='fg_membersite_content'>
 				<h2>Благодариме за вашето регистрирање!</h2>
-				Вашиот email за потврда треба да пристигне. Ве молиме кликнете на линкот во вашиот email за да ја комплетирате регистрацијата.
+				<p>Вашиот email за потврда треба да пристигне. Ве молиме кликнете на линкот во вашиот email за да ја комплетирате регистрацијата.</p>
 			</div>
 		</div>
 	</body>

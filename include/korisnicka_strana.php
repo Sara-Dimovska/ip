@@ -9,7 +9,7 @@ require_once("./include/fg_korisnicka_strana.php");
 
 $fgmembersite = new FGMembersite();
 
-$fgmembersite->SetWebsiteName('Smesti se.com');
+$fgmembersite->SetWebsiteName('Smesti-se.com');
 //Provide the email address where you want to get notifications
 $fgmembersite->SetAdminEmail('ivanacebova@gmail.com');
 
