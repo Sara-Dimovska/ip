@@ -556,7 +556,7 @@ class FGMembersite
 
         $mailer->From = $this->GetFromAddress();
 
-        $mailer->Body ="Здраво ".$user_rec['name']."\r\n\r\n".
+        $mailer->Body ="Здраво ".$user_rec['ime']."\r\n\r\n".
             "Вашата лозинка е ресетирана успешно. ".
             "Ова е вашата ажурирана најава :\r\n".
             "корисничко име :".$user_rec['username']."\r\n".
