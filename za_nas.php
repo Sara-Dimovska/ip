@@ -34,7 +34,7 @@ include "nenajaveniHeader.php";
 			<h3 style='color:#dd6464;    font-size: 35px;
     margin-left: 300px;'>Тимот на &quot;Смести се&quot;</h3>		
 
-			<div style="display: inline-flex;">
+			<div style="display: inline-flex; margin-bottom:50px;">
 				<div id='person'>
 					<img src="assets/sara.png" style="height:250px;width:250px;"> 
 					<p ><center style="font-size:20px;color:#dd6464;">Сара Костовска</center></p>
@@ -50,15 +50,15 @@ include "nenajaveniHeader.php";
 					</center>
 				</div>
 				<div id='person'>
-					
+					<img src="assets/ivana.png" style="height:250px;width:250px;">
 					<p ><center style="font-size:20px;color:#dd6464;">Ивана Цебова</center></p>
 					<center style="font-style: italic; font-size:18px;">
-						одговорен менаџер на овој проект и помага на целиот тим кога им е потребна помош. Како full stack developer се грижи за имплементација на безбедни и коректни функционалности, придонесува во менаџирањето на базата на податоци и кодира во php. Таа е одличен иднивидуален програмер, но уште подобра како тимски играч. Нејзината програмерска страст континуиарно е поттикната од желбата за учење и имплементација на нови идеи секогаш кога е можно.
+						одговорен менаџер и full stack developer се грижи за имплементација на безбедни и коректни функционалности, придонесува во менаџирањето на базата на податоци и кодира во php.Таа е одличен иднивидуален програмер, но уште подобра во тим. Нејзината програмерска страст континуиарно е поттикната од желбата за учење и имплементација на нови идеи.
 					</center>
 				</div>
 				
 			</div>			  					  
-
+	
 		</div>
 
 	</body>
