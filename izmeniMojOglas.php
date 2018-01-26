@@ -185,7 +185,7 @@ else{
 				<tr>
 					<td style="font-size:15px;margin:5px;">Град</td>
 					<td>
-						<select required  name="grad" class="form-control selectpicker show-tick">
+						<select required  name="grad" class="form-control  show-tick">
 							<option value="Берово"<?php if($row['grad']=="Берово") echo 'selected="selected"'; ?>>Берово</option>grad
 							<option value="Битола"<?php if($row['grad']=="Битола") echo 'selected="selected"'; ?>>Битола</option>
 							<option value="Богданци"<?php if($row['grad']=="Богданци") echo 'selected="selected"'; ?>>Богданци</option>
