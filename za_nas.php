@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="container" style="margin-left:200px;margin-top:30px;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
+		<div class="container" style="margin-left:200px;margin-top:30px;margin-bottom:50px;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
 									  padding-right: 40px;">
 
 		
