@@ -161,7 +161,7 @@ if(isset($_POST['vnesiOglas'])){
                             <option value="Струга">Струга</option>
                             <option value="Струмица">Струмица</option>
                             <option value="Тетово">Тетово</option>
-                            <option value="Штип">Штип</option>
+                            p<option value="Штип">Штип</option>
 						</select>
 					</td>
 
