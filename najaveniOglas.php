@@ -37,7 +37,7 @@ include"najaveniHeader.php";
 
 				FROM oglasi,enterier,tip_objekt,tip_greenje,korisnici
 
-				WHERE oglasi.enterier_id=enterier.enterier_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.tip_objekt_id=tip_greenje.tip_greenje_id AND oglasi.korisnik_id = korisnici.id
+				WHERE oglasi.enterier_id=enterier.enterier_id AND oglasi.tip_objekt_id = tip_objekt.tip_objekt_id AND oglasi.tip_greenje_id=tip_greenje.tip_greenje_id AND oglasi.korisnik_id = korisnici.id
 				AND oglasID = '$id'
 				") or die("Error query".mysqli_connect_error());
 

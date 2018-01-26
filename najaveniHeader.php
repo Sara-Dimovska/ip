@@ -33,7 +33,7 @@ if (!$fgmembersite->CheckLogin()) {
     <div style="width:100%;height:80px;">
 
 
-        <form action="index.php" method="post" class="navbar-form" style="float:right; ">
+        <form action="login-home.php" method="post" class="navbar-form" style="float:right; ">
             <div class="form-group">
                 <input type="text" name="klucenZbor" class="form-control" placeholder="клучен збор">
             </div>

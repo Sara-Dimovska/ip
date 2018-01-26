@@ -248,10 +248,10 @@ $oglasi = "";
 	<div class="right ">
 		<p class="text-primary text-center" style="font-size:20px;">Пребарување</p>
 
-		<form action="index.php" method="post">
+		<form action="login-home.php" method="post">
 			<p class="text-muted" style="font-size:15px;margin:5px;"> Категорија:</p>
 
-			<select name="kategorija" class="selectpicker">
+			<select name="kategorija" class=" selectpicker">
 				<option  selected disabled>Изберете категорија</option>
 				<?php
 				$result=mysqli_query($conn,"SELECT ime_kategorija FROM kategorija");
