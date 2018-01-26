@@ -66,6 +66,7 @@ if(!$fgmembersite->CheckLogin())
 			?>
 
 			<input type='image' src='assets/thrash.png'  onClick='izbrishiMojOglas(<?= $row["oglasID"];?>)'/>
+			<input type='image' src='assets/edit.png'  onClick='izmeniMojOglas(<?= $row["oglasID"];?>)'/>
 			<?php
 				//echo "</a>";
 
@@ -104,6 +105,9 @@ if(!$fgmembersite->CheckLogin())
 					window.location.href='izbrishiMojOglas.php?izbrishiMojOglas_id='+oglasID+'';
 					return true;
 				}
+			}
+			function izmeniMojOglas(oglasID){			
+					window.location.href='izmeniMojOglas.php?id='+oglasID+'';
 			}
 
 		</script>

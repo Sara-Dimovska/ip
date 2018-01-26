@@ -271,6 +271,7 @@ include"nenajaveniHeader.php";
         
 	  </div>
 </div>
+	</div>
 	  
 <script type="text/javascript">
 	window.addEventListener('load',imgFunc,false);
