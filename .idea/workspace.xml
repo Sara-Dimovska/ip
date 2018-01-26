@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/login-home.php" afterPath="$PROJECT_DIR$/login-home.php" />
-      <change beforePath="$PROJECT_DIR$/najaveniHeader.php" afterPath="$PROJECT_DIR$/najaveniHeader.php" />
-      <change beforePath="$PROJECT_DIR$/najaveniOglas.php" afterPath="$PROJECT_DIR$/najaveniOglas.php" />
-      <change beforePath="$PROJECT_DIR$/oglas.php" afterPath="$PROJECT_DIR$/oglas.php" />
-      <change beforePath="$PROJECT_DIR$/uploads/28.jpg" afterPath="$PROJECT_DIR$/uploads/28.jpg" />
-      <change beforePath="$PROJECT_DIR$/uploads/29.jpg" afterPath="$PROJECT_DIR$/uploads/29.jpg" />
-      <change beforePath="$PROJECT_DIR$/uploads/30.jpg" afterPath="$PROJECT_DIR$/uploads/30.jpg" />
-      <change beforePath="$PROJECT_DIR$/uploads/31.jpg" afterPath="$PROJECT_DIR$/uploads/31.jpg" />
-      <change beforePath="$PROJECT_DIR$/uploads/32.jpg" afterPath="$PROJECT_DIR$/uploads/32.jpg" />
-      <change beforePath="$PROJECT_DIR$/uploads/33.jpg" afterPath="$PROJECT_DIR$/uploads/33.jpg" />
-    </list>
+    <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/oglas.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="40" column="165" lean-forward="true" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
+              <caret line="40" column="165" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
               <folding>
                 <marker date="1517006083111" expanded="true" signature="567:1059" ph="SELECT oglas... oglasi" />
                 <marker date="1517006083111" expanded="true" signature="1815:1885" ph="SELECT imeSl... sliki" />
@@ -143,7 +132,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -232,15 +221,15 @@
       <workItem from="1516386452322" duration="2597000" />
       <workItem from="1516403652063" duration="2281000" />
       <workItem from="1516996624474" duration="672000" />
-      <workItem from="1517005295314" duration="1151000" />
+      <workItem from="1517005295314" duration="1538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58546000" />
+    <option name="totallyTimeSpent" value="58933000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -490,6 +479,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -585,7 +575,7 @@
     <entry file="file://$PROJECT_DIR$/oglas.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="40" column="165" lean-forward="true" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
+          <caret line="40" column="165" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
           <folding>
             <marker date="1517006083111" expanded="true" signature="567:1059" ph="SELECT oglas... oglasi" />
             <marker date="1517006083111" expanded="true" signature="1815:1885" ph="SELECT imeSl... sliki" />
