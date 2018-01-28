@@ -7,9 +7,17 @@
 		<div class="container" style="margin-left:200px;margin-top:30px;margin-bottom:50px;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
 									  padding-right: 40px;">
 
-		
+			<div style="margin:50 100 50 200;">
+				<video width="700" controls>
+					<source src="assets/VIDEO.mp4" type="video/mp4">
+
+				</video>
+			</div>
+
+
+
 			<h3 style='color:#dd6464;    font-size: 35px;
-    margin-left: 300px;'>Тимот на &quot;Смести се&quot;</h3>		
+					   margin-left: 350px;'>Тимот на &quot;Смести се&quot;</h3>		
 
 			<div style="display: inline-flex; margin-bottom:50px;">
 				<div id='person'>
@@ -33,17 +41,17 @@
 						одговорен менаџер и full stack developer се грижи за имплементација на безбедни и коректни функционалности, придонесува во менаџирањето на базата на податоци и кодира во php.Таа е одличен иднивидуален програмер, но уште подобра во тим. Нејзината програмерска страст континуиарно е поттикната од желбата за учење и имплементација на нови идеи.
 					</center>
 				</div>
-				
+
 			</div>			  					  
-	
+
 		</div>
 
 	</body>
 	<footer class="panel-footer">
-	<center>		
-		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
-		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
-	</center>
-	
-</footer>
+		<center>		
+			<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+			<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+		</center>
+
+	</footer>
 </html>
