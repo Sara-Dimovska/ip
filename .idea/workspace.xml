@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="" />
+    <list default="true" id="2ab14236-2347-47cb-8453-476ee916317b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/vnesiOglas.php" afterPath="$PROJECT_DIR$/vnesiOglas.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,64 +17,36 @@
       <file leaf-file-name="najaveniHeader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/najaveniHeader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login-home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1360">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="549">
+              <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
               <folding>
-                <marker date="1517006083068" expanded="true" signature="1715:2009" ph="SELECT * FRO... oglasi" />
-                <marker date="1517006083068" expanded="true" signature="3047:3184" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="3999:4082" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="4103:4109" ph="€" />
-                <marker date="1517006083068" expanded="true" signature="4179:4276" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="4544:4724" ph="SELECT * FRO... oglasi" />
-                <marker date="1517006083068" expanded="true" signature="4811:4948" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="5288:5492" ph="SELECT * FRO... oglasi" />
-                <marker date="1517006083068" expanded="true" signature="5923:6006" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="6027:6033" ph="€" />
-                <marker date="1517006083068" expanded="true" signature="6103:6200" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="6345:6486" ph="SELECT * FRO... oglasi" />
-                <marker date="1517006083068" expanded="true" signature="6574:6711" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="7042:7208" ph="SELECT * FRO... oglasi" />
-                <marker date="1517006083068" expanded="true" signature="7645:7728" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="7749:7755" ph="€" />
-                <marker date="1517006083068" expanded="true" signature="7825:7922" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="8796:9130" ph="..." />
-                <marker date="1517006083068" expanded="true" signature="8900:8937" ph="SELECT ime_k... kategorija" />
-                <marker date="1517006083068" expanded="true" signature="9384:9408" ph="SELECT * FRO... tip_objekt" />
-                <marker date="1517006083068" expanded="true" signature="9837:9859" ph="SELECT * FRO... enterier" />
-                <marker date="1517006083068" expanded="true" signature="10280:10313" ph="SELECT DISTI... oglasi" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oglas.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/oglas.php">
+      <file leaf-file-name="vnesiOglas.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="40" column="165" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
+            <state relative-caret-position="1555">
+              <caret line="129" column="71" lean-forward="true" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="71" />
               <folding>
-                <marker date="1517006083111" expanded="true" signature="567:1059" ph="SELECT oglas... oglasi" />
-                <marker date="1517006083111" expanded="true" signature="1815:1885" ph="SELECT imeSl... sliki" />
+                <marker date="1517148606843" expanded="true" signature="1847:2255" ph="INSERT INTO `oglasi`... " />
+                <marker date="1517148606843" expanded="true" signature="2958:3012" ph="INSERT INTO sliki... " />
+                <marker date="1517148606843" expanded="true" signature="3201:3266" ph="UPDATE sliki... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="za_nas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/za_nas.php">
+      <file leaf-file-name="nenajaveniHeader.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nenajaveniHeader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="804">
+              <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -114,13 +89,13 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login-home.php" />
         <option value="$PROJECT_DIR$/lista_moderator.php" />
-        <option value="$PROJECT_DIR$/najaveniHeader.php" />
         <option value="$PROJECT_DIR$/lista_admin.php" />
         <option value="$PROJECT_DIR$/vnesiModerator.php" />
         <option value="$PROJECT_DIR$/nenajaveniHeader.php" />
         <option value="$PROJECT_DIR$/oglas.php" />
         <option value="$PROJECT_DIR$/pomos.php" />
         <option value="$PROJECT_DIR$/za_nas.php" />
+        <option value="$PROJECT_DIR$/najaveniHeader.php" />
         <option value="$PROJECT_DIR$/vnesiOglas.php" />
       </list>
     </option>
@@ -132,7 +107,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -152,8 +127,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,15 +196,17 @@
       <workItem from="1516386452322" duration="2597000" />
       <workItem from="1516403652063" duration="2281000" />
       <workItem from="1516996624474" duration="672000" />
-      <workItem from="1517005295314" duration="1538000" />
+      <workItem from="1517005295314" duration="1749000" />
+      <workItem from="1517013719945" duration="1319000" />
+      <workItem from="1517146814987" duration="1794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58933000" />
+    <option name="totallyTimeSpent" value="62257000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -263,13 +240,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/fg_korisnicka_strana.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/fg_korisnicka_strana.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -468,18 +438,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nenajaveniHeader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -518,67 +480,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
+    <entry file="file://$PROJECT_DIR$/oglas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1179">
-          <caret line="163" column="29" lean-forward="false" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+        <state relative-caret-position="17">
+          <caret line="40" column="165" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login-home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/za_nas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="17">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/najaveniOglas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <marker date="1517006083097" expanded="true" signature="554:1046" ph="SELECT oglas... oglasi" />
+            <marker date="1517006083097" expanded="true" signature="1802:1872" ph="SELECT imeSl... sliki" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nenajaveniHeader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/najaveniHeader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login-home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1360">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="549">
+          <caret line="118" column="4" lean-forward="false" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="4" />
           <folding>
-            <marker date="1517006083068" expanded="true" signature="1715:2009" ph="SELECT * FRO... oglasi" />
-            <marker date="1517006083068" expanded="true" signature="3047:3184" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="3999:4082" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="4103:4109" ph="€" />
-            <marker date="1517006083068" expanded="true" signature="4179:4276" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="4544:4724" ph="SELECT * FRO... oglasi" />
-            <marker date="1517006083068" expanded="true" signature="4811:4948" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="5288:5492" ph="SELECT * FRO... oglasi" />
-            <marker date="1517006083068" expanded="true" signature="5923:6006" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="6027:6033" ph="€" />
-            <marker date="1517006083068" expanded="true" signature="6103:6200" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="6345:6486" ph="SELECT * FRO... oglasi" />
-            <marker date="1517006083068" expanded="true" signature="6574:6711" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="7042:7208" ph="SELECT * FRO... oglasi" />
-            <marker date="1517006083068" expanded="true" signature="7645:7728" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="7749:7755" ph="€" />
-            <marker date="1517006083068" expanded="true" signature="7825:7922" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="8796:9130" ph="..." />
-            <marker date="1517006083068" expanded="true" signature="8900:8937" ph="SELECT ime_k... kategorija" />
-            <marker date="1517006083068" expanded="true" signature="9384:9408" ph="SELECT * FRO... tip_objekt" />
-            <marker date="1517006083068" expanded="true" signature="9837:9859" ph="SELECT * FRO... enterier" />
-            <marker date="1517006083068" expanded="true" signature="10280:10313" ph="SELECT DISTI... oglasi" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oglas.php">
+    <entry file="file://$PROJECT_DIR$/vnesiOglas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="40" column="165" lean-forward="false" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="165" />
+        <state relative-caret-position="1555">
+          <caret line="129" column="71" lean-forward="true" selection-start-line="129" selection-start-column="71" selection-end-line="129" selection-end-column="71" />
           <folding>
-            <marker date="1517006083111" expanded="true" signature="567:1059" ph="SELECT oglas... oglasi" />
-            <marker date="1517006083111" expanded="true" signature="1815:1885" ph="SELECT imeSl... sliki" />
+            <marker date="1517148606843" expanded="true" signature="1847:2255" ph="INSERT INTO `oglasi`... " />
+            <marker date="1517148606843" expanded="true" signature="2958:3012" ph="INSERT INTO sliki... " />
+            <marker date="1517148606843" expanded="true" signature="3201:3266" ph="UPDATE sliki... " />
           </folding>
         </state>
       </provider>
