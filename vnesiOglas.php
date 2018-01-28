@@ -127,7 +127,7 @@ if(isset($_POST['vnesiOglas'])){
 					<td style="font-size:15px;margin:5px;">Град</td>
 					<td>
 						<select  required name="grad" class="form-control">
-							<option value=""selected disabled></option>
+							<option value="selected disabled"></option>
                             <option value="Берово">Берово</option>
                             <option value="Битола">Битола</option>
                             <option value="Богданци">Богданци</option>
@@ -161,7 +161,7 @@ if(isset($_POST['vnesiOglas'])){
                             <option value="Струга">Струга</option>
                             <option value="Струмица">Струмица</option>
                             <option value="Тетово">Тетово</option>
-                            p<option value="Штип">Штип</option>
+                            <option value="Штип">Штип</option>
 						</select>
 					</td>
 
