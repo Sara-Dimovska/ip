@@ -303,12 +303,13 @@ else{
 					<td  style="font-size:15px;margin:5px;">Цена:</td>	
 					<td ><input required type='text' name="cena" class="form-control" id = "cenaVnes"
 								<?php 
-	if($row['tip_cena'] == 'Евра')
-		echo $row['cena'];
-								else
+
+								if($row['tip_cena'] == 'По договор')
 									echo 'disabled';
 
-								?>>
+								?>
+								placeholder="<?php if($row['tip_cena'] == 'Евра') echo $row['cena']; ?>"
+								 >
 					</td>
 					<td>
 						<select required name="tip_cena" class="form-control selectpicker show-tick" id="tipCena" onchange="cenaDisable()">
