@@ -74,11 +74,11 @@ if (!$fgmembersite->CheckLogin()) {
 
 
             <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
-                <a href="oglasi_za_odobruvanje.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Огласи со барање за објава</a>
+                <a href="oglasi_za_odobruvanje.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Барања за објава</a>
             <?php }?>
 
             <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
-                <a href="moiOdobreniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Одобрени огласи</a>
+                <a href="moiOdobreniOglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Мои одобрени</a>
             <?php }?>
 
             <?php if( ($fgmembersite->User_type() == 'админ') && ($fgmembersite->User_type() != 'модератор') && ($fgmembersite->User_type() != 'корисник') ) {?>
@@ -87,10 +87,10 @@ if (!$fgmembersite->CheckLogin()) {
 
             <?php if ((($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор')) && ($fgmembersite->User_type() != 'корисник')) { ?>
                <?php if($fgmembersite->User_type() == 'админ') {?>
-                <a href="lista_admin.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Листа на корисници</a>
+                <a href="lista_admin.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Корисници</a>
                 <?php }?>
                 <?php if ($fgmembersite->User_type() == 'модератор') {?>
-                    <a href="lista_moderator.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Листа на корисници</a>
+                    <a href="lista_moderator.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Корисници</a>
                 <?php }?>
             <?php }?>
             <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') || ($fgmembersite->User_type() == 'корисник')) {?>
