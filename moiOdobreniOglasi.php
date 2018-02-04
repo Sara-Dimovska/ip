@@ -11,7 +11,7 @@ include "connection.php";
 	</head>
 	<body>
 		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
-    padding-right: 40px;">
+									  padding-right: 40px;">
 			<?php
 			$user_id =  $fgmembersite->User_id();
 
@@ -57,7 +57,6 @@ include "connection.php";
 				echo "</a>";
 			}
 			?>
-
 			<div class="text-center" >
 
 				<ul class="pagination">
@@ -71,24 +70,38 @@ include "connection.php";
 					<?php
 					for($strana = 1;$strana <= $brojStrani;$strana++){
 
-						echo ' <li><a href = "login-home.php?strana='.$strana.'">'.$strana.'</a></li>';
+						//echo ' <li ><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+					?>
+					<li <?php 
+						if(isset($_GET['strana']) && $_GET['strana'] == $strana)
+							echo 'class="active"';
+						elseif(!isset($_GET['strana']) && $strana == 1)
+							echo 'class="active"';
+
+						?> >
+
+						<?php echo '<a href = "moiOdobreniOglasi.php?strana='.$strana.'">'.$strana.'</a>'; ?>
+
+					</li>
+					<?php	
 					}
-					//mkdir("testing");
+					
 					?>
 
 				</ul>
 
 			</div>
 
+
 		</div>
 
 
 	</body>
 	<footer class="panel-footer">
-	<center>		
-		<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
-		<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
-	</center>
-	
-</footer>
+		<center>		
+			<h4>COPYRIGHT 	&copy; SMESTI-SE.МК 2018</h4>
+			<a href="pravila.php">ПРАВИЛА И УСЛОВИ</a>
+		</center>
+
+	</footer>
 </html>

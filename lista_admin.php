@@ -63,7 +63,7 @@ include "connection.php";
 
                 </td>
 
-                </tr>
+               
 
 
                 <?php
@@ -75,27 +75,40 @@ include "connection.php";
         ?>
     </table>
 
-    <div class="text-center" >
+  <div class="text-center" >
 
-        <ul class="pagination">
-            <li>
-                <?php
-                // echo '<a href="href = "index.php?strana='.($strana-1).'" aria-label="Previous">';
-                // echo    '<span aria-hidden="true">&laquo;</span>';
-                // echo '</a>';
-                ?>
-            </li>
-            <?php
-            for($strana = 1;$strana <= $brojStrani;$strana++){
+			<ul class="pagination">
+				<li>
+					<?php
+					// echo '<a href="href = "index.php?strana='.($strana-1).'" aria-label="Previous">';
+					// echo    '<span aria-hidden="true">&laquo;</span>';
+					// echo '</a>';
+					?>
+				</li>
+				<?php
+				for($strana = 1;$strana <= $brojStrani;$strana++){
 
-                echo ' <li><a href = "lista_admin.php?strana='.$strana.'">'.$strana.'</a></li>';
-            }
-            //mkdir("testing");
-            ?>
+					//echo ' <li ><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+					?>
+					<li <?php 
+							if(isset($_GET['strana']) && $_GET['strana'] == $strana)
+								echo 'class="active"';
+							  elseif(!isset($_GET['strana']) && $strana == 1)
+								  echo 'class="active"';
+						
+						?> >
+					
+					<?php echo '<a href = "lista_admin.php?strana='.$strana.'">'.$strana.'</a>'; ?>
+					
+					 </li>
+				<?php	
+				}
+				//mkdir("testing");
+				?>
 
-        </ul>
+			</ul>
 
-    </div>
+		</div>
 
 </div>
 <script language='javascript'>

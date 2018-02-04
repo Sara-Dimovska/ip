@@ -232,7 +232,20 @@ $oglasi = "";
 				<?php
 				for($strana = 1;$strana <= $brojStrani;$strana++){
 
-					echo ' <li><a href = "login-home.php?strana='.$strana.'">'.$strana.'</a></li>';
+					//echo ' <li ><a href = "index.php?strana='.$strana.'">'.$strana.'</a></li>';
+					?>
+					<li <?php 
+							if(isset($_GET['strana']) && $_GET['strana'] == $strana)
+								echo 'class="active"';
+							  elseif(!isset($_GET['strana']) && $strana == 1)
+								  echo 'class="active"';
+						
+						?> >
+					
+					<?php echo '<a href = "login-home.php?strana='.$strana.'">'.$strana.'</a>'; ?>
+					
+					 </li>
+				<?php	
 				}
 				//mkdir("testing");
 				?>
@@ -240,6 +253,7 @@ $oglasi = "";
 			</ul>
 
 		</div>
+		
 
 
 
