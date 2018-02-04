@@ -227,14 +227,14 @@ else{
 				<tr>
 
 					<td  style="font-size:15px;margin:5px;">Наслов на огласот:</td>
-					<td><input required type='text' name="naslov" class="form-control" placeholder="<?=$row['naslov']?>"></td>
+					<td><input required type='text' name="naslov" class="form-control" value="<?=$row['naslov']?>"></td>
 				</tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">Опис:</td>
 					<td >
 
 						<div class="form-group">
-							<textarea required class="form-control" name = 'opis' id="exampleFormControlTextarea1" rows="5" placeholder="<?=$row['opis']?>"></textarea>
+							<textarea required class="form-control" name = 'opis' id="exampleFormControlTextarea1" rows="5"><?=$row['opis']?> </textarea>
 						</div>
 
 
@@ -242,13 +242,13 @@ else{
 
 				<tr >
 					<td style="font-size:15px;margin:5px;" >Површина:</td>	
-					<td ><input required type='text' name="kvadratura" class="form-control"placeholder="<?=$row['kvadratura']?>"></td>	
+					<td ><input required type='text' name="kvadratura" class="form-control"value="<?=$row['kvadratura']?>"></td>	
 					<td style="font-size:15px;margin:5px;">m<sup>2</sup></td>
 
 				</tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">Година на изградба: </td>
-					<td ><input required type='text' name="godina_izgradba" class="form-control"placeholder="<?=$row['godina_izgradba']?>"></td>
+					<td ><input required type='text' name="godina_izgradba" class="form-control"value="<?=$row['godina_izgradba']?>"></td>
 				</tr>
 				<tr>
 					<td style="font-size:15px;margin:5px;">
@@ -295,7 +295,7 @@ else{
 
 				<tr>
 					<td style="font-size:15px;margin:5px;">Адреса:</td>	
-					<td ><input required type='text'name='lokacija' class="form-control" placeholder="<?=$row['lokacija']?>"></td>	
+					<td ><input required type='text'name='lokacija' class="form-control" value="<?=$row['lokacija']?>"></td>	
 
 				</tr>		
 
