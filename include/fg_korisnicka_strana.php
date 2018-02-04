@@ -416,9 +416,9 @@ class FGMembersite
     function ChangePasswordInDB($user_rec, $newpwd)
     {
         $newpwd = $this->SanitizeForSQL($newpwd);
-		$user_id = $this->User_id();
+		$user_id = $user_rec['id'];
 
-        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id='$user_id' ";
+        $qry = "Update $this->tablename Set password='".md5($newpwd)."' Where  id='$user_id'";
 
         if(!mysqli_query($this->connection, $qry))
         {
