@@ -274,7 +274,7 @@ include"najaveniHeader.php";
           <input type="submit" class="btn btn-success"  name="isprati_poraka" value="Испрати">
           <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
         </div>
-          
+          <input type="hidden" name="oglas_id" value="<?=$id; ?>"> 
          </form>
           
         </div>

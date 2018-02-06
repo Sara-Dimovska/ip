@@ -52,12 +52,16 @@ if(isset($_POST['submitted']))
 				
 				$sql = "UPDATE korisnici 
 						SET ";
+				
+				
 				if(!empty($ime))
 					$sql .= " ime = '$ime' ";
 				
+				
+				
 				if (!empty($ime) && !empty($email))
 					$sql .= " , email = '$email'";
-				else if (!empty($email))
+				else if (empty($ime) && !empty($email))
 					$sql .= "email = '$email'";
 				
 				
@@ -66,11 +70,16 @@ if(isset($_POST['submitted']))
 				if(!empty($ime) && !empty($email) && !empty($telefon))
 					$sql .= " , telefon = '$telefon'";
 				
-				else if (!empty($email) && !empty($telefon))
+				else if (empty($ime) && !empty($email) && !empty($telefon))
 					$sql .= " , telefon = '$telefon'";
+				
+				else if (!empty($ime) && empty($email) && !empty($telefon))
+					$sql .= " , telefon = '$telefon'";			
 				
 				else if(!empty($telefon))
 					$sql .= "  telefon = '$telefon'";
+				
+				
 				
 				$sql .= " WHERE id = '$user_id'";
 				
