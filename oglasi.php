@@ -1,43 +1,53 @@
 <?php
-
-
 include "najaveniHeader.php";
-include "connection.php";
-require_once("./include/korisnicka_strana.php");
 
-if(!$fgmembersite->CheckLogin())
-{
-	$fgmembersite->RedirectToURL("login.php");
-	exit;
-}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 	<head>
 	</head>
 	<body>
-		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;padding-left: 40px;
+		<div class="container" style="margin:30 auto;background-color:whitesmoke;border-radius:4px;    padding-left: 40px;
 									  padding-right: 40px;">
 			<?php
+			
+			if(isset($_GET['Izbrishi_oglasID'])){
+				
+				$oglas_id = $_GET['Izbrishi_oglasID'];
+				
+				$sql = "DELETE FROM oglasi
+				WHERE oglasi.oglasID = '$oglas_id'";
 
-	
+
+				$result = mysqli_query($conn,$sql);
+
+				if($result){
+					echo"<h2> Успешно го избришавте огласот!</h2>";
+				} 
+				
+				header( "refresh:1;url=oglasi.php" );
+			}
+			
+			
+			
+			
 			
 			$user_id =  $fgmembersite->User_id();
 
 			//echo $user_id;
 			$oglasi = "";
-			$zapisi_naStrana =12;
+			$zapisi_naStrana =24;
 
 
 			$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				WHERE oglasi.korisnik_id = '$user_id' AND odobren = '1'
+				WHERE oglasi.odobren = '1'
 				GROUP BY sliki.oglasID
 				") or die("Error");
 
 			$oglasi = mysqli_num_rows($sql);
-			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Мои објавени огласи: ';
+			echo '<p style="margin-left:10px; margin-right:20px;margin-top:20px;font-size:20px; color:white; background-color:#dd6464;padding:5px; border-radius:4px;" ><strong>Вкупно огласи: ';
 			echo $oglasi;
 
 			$brojStrani = ceil($oglasi/$zapisi_naStrana);
@@ -51,36 +61,39 @@ if(!$fgmembersite->CheckLogin())
 
 			echo '</strong></p>';
 			
+			
+			
 			$sql = mysqli_query($conn,"SELECT *
 				FROM oglasi
 				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
-				WHERE oglasi.korisnik_id = '$user_id' AND odobren = '1'
+				WHERE oglasi.odobren = '1'
 				GROUP BY sliki.oglasID
 				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
 			
+			
+			
+			
 			while ($row = mysqli_fetch_array($sql)){
-				echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;'  >";
+				echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
 				echo "<div class ='oglas'>";
 				echo "<img id='oglas_Slika' src='uploads/".$row['imeSlika']."' />";
+
 				echo '<div class="oglas-text">';
-				echo $row['naslov'];
-				//if($row['cena'] == 0)
-				switch($row['tip_cena']){
-					case 'Евра': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:green;">'.$row['cena'] . ' &euro; </div>'; break;
-					case 'По договор': echo '<br>Цена: <div style="height:30px;padding:5px;display: inline; border-radius:4px; background-color:yellow; color:black;">По договор</div>'; break;
-				}
+				
+				echo "Оглас ИД: " .$row['oglasID'];
+				
 				echo "</a>";
-				echo "<br>";
+
+				
 			?>
 
-			<input type='image' src='assets/thrash.png'  onClick='izbrishiMojOglas(<?= $row["oglasID"];?>)'/>
-			<input type='image' src='assets/edit.png'  onClick='izmeniMojOglas(<?= $row["oglasID"];?>)'/>
+			<input type='image' src='assets/thrash.png' style='margin-left:10px;' onClick='izbrishi_oglas(<?= $row["oglasID"];?>)'/>
 			<?php
 				//echo "</a>";
 
 				echo "</div>";
 				echo "</div>";
-				
+				echo "</a>";
 			}
 			?>
 
@@ -107,12 +120,12 @@ if(!$fgmembersite->CheckLogin())
 						
 						?> >
 					
-					<?php echo '<a href = "moiOglasi.php?strana='.$strana.'">'.$strana.'</a>'; ?>
+					<?php echo '<a href = "oglasi.php?strana='.$strana.'">'.$strana.'</a>'; ?>
 					
 					 </li>
 				<?php	
 				}
-				//mkdir("testing");
+				
 				?>
 
 			</ul>
@@ -121,14 +134,11 @@ if(!$fgmembersite->CheckLogin())
 
 		</div>
 		<script language='javascript'>
-			function izbrishiMojOglas(oglasID){
-				if(confirm("Дали сте сигурни дека сакате да го избришете вашиот оглас?")){
-					window.location.href='izbrishiMojOglas.php?izbrishiMojOglas_id='+oglasID+'';
+			function izbrishi_oglas(oglasID){
+				if(confirm("Дали сте сигурни дека сакате да го избришете огласов?")){
+					window.location.href='oglasi.php?Izbrishi_oglasID='+oglasID+'';
 					return true;
 				}
-			}
-			function izmeniMojOglas(oglasID){			
-					window.location.href='izmeniMojOglas.php?id='+oglasID+'';
 			}
 
 		</script>

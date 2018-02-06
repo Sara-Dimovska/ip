@@ -39,6 +39,14 @@ include "connection.php";
 			$stranaOD = ($strana-1)*$zapisi_naStrana;
 
 			echo '</strong></p>';
+			
+			$sql = mysqli_query($conn,"SELECT *
+				FROM zacuvani_oglasi,oglasi
+				INNER JOIN sliki ON (oglasi.oglasID = sliki.oglasID)
+				WHERE zacuvani_oglasi.korisnicko_id = '$user_id' AND zacuvani_oglasi.oglasID = oglasi.oglasID
+				GROUP BY sliki.oglasID
+				LIMIT ".$stranaOD.','.$zapisi_naStrana) or die("Error");
+			
 			while ($row = mysqli_fetch_array($sql)){
 				echo "<a href='najaveniOglas.php?id=".$row['oglasID']. "' style='text-decoration : none; color : #fff;' >";
 				echo "<div class ='oglas'>";

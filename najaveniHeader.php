@@ -74,7 +74,7 @@ if (!$fgmembersite->CheckLogin()) {
 
 
             <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
-                <a href="oglasi_za_odobruvanje.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Барања за објава</a>
+                <a href="oglasi_za_odobruvanje.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Одобри</a>
             <?php }?>
 
             <?php if(($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') ) {?>
@@ -93,6 +93,13 @@ if (!$fgmembersite->CheckLogin()) {
                     <a href="lista_moderator.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Корисници</a>
                 <?php }?>
             <?php }?>
+            
+            <?php if($fgmembersite->User_type() == 'админ'){?>
+                <a href="oglasi.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Огласи</a>
+            <?php }?>
+            
+            
+            
             <?php if( ($fgmembersite->User_type() == 'админ') || ($fgmembersite->User_type() == 'модератор') || ($fgmembersite->User_type() == 'корисник')) {?>
                 <a href="urediProfil.php" class="btn btn-default  navbar-btn" style="display: inline-block;">Уреди мој профил</a>
             <?php }?>
